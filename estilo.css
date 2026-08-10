@@ -1,33 +1,19 @@
+```css
 /* ======================================================
    XV AÑOS - ALEJANDRA MICHELLE
    ESTILO PRINCIPAL
    ====================================================== */
 
-
-/* ======================================================
-   VARIABLES
-   ====================================================== */
-
 :root {
-
     --dorado: #b89455;
-
     --dorado-claro: #d8bd83;
-
     --crema: #f8f4ec;
-
     --blanco: #ffffff;
-
     --texto: #4a4036;
-
     --texto-claro: #766b60;
-
     --fondo: #f7f2e9;
-
     --fondo-oscuro: #241d18;
-
 }
-
 
 
 /* ======================================================
@@ -35,27 +21,16 @@
    ====================================================== */
 
 * {
-
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
-
 }
-
-
 
 html {
-
     scroll-behavior: smooth;
-
 }
 
-
-
 body {
-
     min-height: 100vh;
 
     background:
@@ -72,9 +47,7 @@ body {
         sans-serif;
 
     overflow-x: hidden;
-
 }
-
 
 
 /* ======================================================
@@ -82,9 +55,7 @@ body {
    ====================================================== */
 
 .seccion {
-
     min-height: 100vh;
-
     width: 100%;
 
     position: relative;
@@ -92,7 +63,6 @@ body {
     display: none;
 
     align-items: center;
-
     justify-content: center;
 
     flex-direction: column;
@@ -100,13 +70,9 @@ body {
     text-align: center;
 
     padding: 60px 25px;
-
 }
 
-
-
 .seccion.activo {
-
     display: flex;
 
     animation:
@@ -114,33 +80,20 @@ body {
         0.9s
         ease
         forwards;
-
 }
-
-
 
 @keyframes aparecerSeccion {
 
     from {
-
         opacity: 0;
-
-        transform:
-            translateY(25px);
-
+        transform: translateY(25px);
     }
 
     to {
-
         opacity: 1;
-
-        transform:
-            translateY(0);
-
+        transform: translateY(0);
     }
-
 }
-
 
 
 /* ======================================================
@@ -168,12 +121,8 @@ body {
             #3a3027,
             #1e1814
         );
-
 }
 
-
-
-/* Brillo central */
 
 .portada::before {
 
@@ -182,7 +131,6 @@ body {
     position: absolute;
 
     width: 500px;
-
     height: 500px;
 
     border-radius: 50%;
@@ -195,16 +143,13 @@ body {
         );
 
     top: 50%;
-
     left: 50%;
 
     transform:
         translate(-50%, -50%);
 
     pointer-events: none;
-
 }
-
 
 
 /* ======================================================
@@ -226,9 +171,7 @@ body {
     flex-direction: column;
 
     align-items: center;
-
 }
-
 
 
 /* ======================================================
@@ -251,9 +194,7 @@ body {
         var(--dorado-claro);
 
     margin-bottom: 20px;
-
 }
-
 
 
 /* ======================================================
@@ -278,13 +219,11 @@ body {
         rgba(216,189,131,0.5);
 
     margin-bottom: 10px;
-
 }
 
 
-
 /* ======================================================
-   NOMBRE
+   NOMBRE ALEJANDRA
    ====================================================== */
 
 .portada h1 {
@@ -303,10 +242,12 @@ body {
     letter-spacing: 2px;
 
     color: white;
-
 }
 
 
+/* ======================================================
+   MICHELLE HERNÁNDEZ MUÑOZ
+   ====================================================== */
 
 .portada h2 {
 
@@ -317,17 +258,18 @@ body {
     font-size:
         clamp(22px, 4vw, 35px);
 
-    font-weight: 400;
+    font-weight: 600;
 
     letter-spacing: 2px;
 
     margin-top: 15px;
 
-    color:
-        var(--dorado-claro);
+    color: #f3d99b;
 
+    text-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.55),
+        0 0 12px rgba(216, 189, 131, 0.35);
 }
-
 
 
 /* ======================================================
@@ -349,9 +291,7 @@ body {
         );
 
     margin: 25px 0;
-
 }
-
 
 
 /* ======================================================
@@ -374,9 +314,7 @@ body {
 
     color:
         rgba(255,255,255,0.85);
-
 }
-
 
 
 /* ======================================================
@@ -392,9 +330,7 @@ body {
     gap: 18px;
 
     margin-top: 30px;
-
 }
-
 
 
 .fecha-portada > span {
@@ -409,9 +345,7 @@ body {
 
     color:
         var(--dorado-claro);
-
 }
-
 
 
 .fecha-portada > div {
@@ -427,9 +361,7 @@ body {
         rgba(216,189,131,0.5);
 
     padding-left: 18px;
-
 }
-
 
 
 .fecha-portada strong {
@@ -439,9 +371,7 @@ body {
     letter-spacing: 4px;
 
     font-weight: 500;
-
 }
-
 
 
 .fecha-portada small {
@@ -454,9 +384,7 @@ body {
 
     color:
         var(--dorado-claro);
-
 }
-
 
 
 /* ======================================================
@@ -473,9 +401,7 @@ body {
 
     color:
         rgba(255,255,255,0.8);
-
 }
-
 
 
 /* ======================================================
@@ -513,9 +439,7 @@ body {
 
     transition:
         all 0.35s ease;
-
 }
-
 
 
 .boton-siguiente:hover {
@@ -532,9 +456,7 @@ body {
     box-shadow:
         0 10px 30px
         rgba(0,0,0,0.25);
-
 }
-
 
 
 /* ======================================================
@@ -553,9 +475,7 @@ body {
 
     animation-delay:
         0.3s;
-
 }
-
 
 
 .portada .corona {
@@ -580,9 +500,7 @@ body {
     animation-delay:
         0.6s,
         2s;
-
 }
-
 
 
 .portada h1 {
@@ -600,9 +518,7 @@ body {
 
     animation-delay:
         1s;
-
 }
-
 
 
 .portada h2 {
@@ -620,9 +536,7 @@ body {
 
     animation-delay:
         1.4s;
-
 }
-
 
 
 .portada .linea {
@@ -640,9 +554,7 @@ body {
 
     animation-delay:
         1.8s;
-
 }
-
 
 
 .portada .frase-portada {
@@ -660,9 +572,7 @@ body {
 
     animation-delay:
         2s;
-
 }
-
 
 
 .portada .fecha-portada {
@@ -680,9 +590,7 @@ body {
 
     animation-delay:
         2.4s;
-
 }
-
 
 
 .portada .hora-portada {
@@ -700,9 +608,7 @@ body {
 
     animation-delay:
         2.7s;
-
 }
-
 
 
 .portada .boton-siguiente {
@@ -720,13 +626,11 @@ body {
 
     animation-delay:
         3.2s;
-
 }
 
 
-
 /* ======================================================
-   KEYFRAMES
+   ANIMACIONES
    ====================================================== */
 
 @keyframes aparecerArriba {
@@ -737,7 +641,6 @@ body {
 
         transform:
             translateY(30px);
-
     }
 
     to {
@@ -746,11 +649,8 @@ body {
 
         transform:
             translateY(0);
-
     }
-
 }
-
 
 
 @keyframes aparecerCorona {
@@ -765,7 +665,6 @@ body {
 
         filter:
             blur(5px);
-
     }
 
     60% {
@@ -778,7 +677,6 @@ body {
 
         filter:
             blur(0);
-
     }
 
     100% {
@@ -788,11 +686,8 @@ body {
         transform:
             scale(1)
             rotate(0);
-
     }
-
 }
-
 
 
 @keyframes aparecerLinea {
@@ -803,7 +698,6 @@ body {
 
         transform:
             scaleX(0);
-
     }
 
     to {
@@ -812,11 +706,8 @@ body {
 
         transform:
             scaleX(1);
-
     }
-
 }
-
 
 
 @keyframes aparecerBoton {
@@ -827,7 +718,6 @@ body {
 
         transform:
             translateY(25px);
-
     }
 
     to {
@@ -836,11 +726,8 @@ body {
 
         transform:
             translateY(0);
-
     }
-
 }
-
 
 
 @keyframes brilloCorona {
@@ -852,7 +739,6 @@ body {
                 0 0 0
                 rgba(216,189,131,0)
             );
-
     }
 
     50% {
@@ -862,7 +748,6 @@ body {
                 0 0 18px
                 rgba(216,189,131,0.9)
             );
-
     }
 
     100% {
@@ -872,11 +757,8 @@ body {
                 0 0 0
                 rgba(216,189,131,0)
             );
-
     }
-
 }
-
 
 
 /* ======================================================
@@ -892,9 +774,7 @@ body {
     overflow: hidden;
 
     pointer-events: none;
-
 }
-
 
 
 .particulas span {
@@ -917,9 +797,7 @@ body {
         6s
         linear
         infinite;
-
 }
-
 
 
 .particulas span:nth-child(1) {
@@ -983,7 +861,6 @@ body {
 }
 
 
-
 @keyframes flotar {
 
     0% {
@@ -993,19 +870,16 @@ body {
         transform:
             translateY(0)
             scale(0.5);
-
     }
 
     20% {
 
         opacity: 0.8;
-
     }
 
     80% {
 
         opacity: 0.5;
-
     }
 
     100% {
@@ -1015,11 +889,8 @@ body {
         transform:
             translateY(-100vh)
             scale(1.3);
-
     }
-
 }
-
 
 
 /* ======================================================
@@ -1043,9 +914,7 @@ body {
 
     color:
         var(--texto);
-
 }
-
 
 
 .seccion h2 {
@@ -1063,9 +932,7 @@ body {
         #493c31;
 
     margin-bottom: 25px;
-
 }
-
 
 
 .subtitulo {
@@ -1080,9 +947,7 @@ body {
     font-weight: 600;
 
     margin-bottom: 15px;
-
 }
-
 
 
 .texto {
@@ -1101,9 +966,7 @@ body {
         var(--texto-claro);
 
     margin: 10px auto;
-
 }
-
 
 
 .adorno {
@@ -1114,9 +977,7 @@ body {
         var(--dorado);
 
     margin-bottom: 20px;
-
 }
-
 
 
 .firma {
@@ -1133,9 +994,7 @@ body {
         var(--dorado);
 
     margin-top: 30px;
-
 }
-
 
 
 /* ======================================================
@@ -1153,9 +1012,7 @@ body {
     gap: 30px;
 
     margin: 30px 0;
-
 }
-
 
 
 .fecha-grande > div:not(.separador) {
@@ -1165,9 +1022,7 @@ body {
     flex-direction: column;
 
     align-items: center;
-
 }
-
 
 
 .fecha-grande span {
@@ -1181,9 +1036,7 @@ body {
 
     color:
         var(--dorado);
-
 }
-
 
 
 .fecha-grande small {
@@ -1194,9 +1047,7 @@ body {
 
     color:
         var(--texto-claro);
-
 }
-
 
 
 .separador {
@@ -1207,9 +1058,7 @@ body {
 
     background:
         var(--dorado-claro);
-
 }
-
 
 
 .hora {
@@ -1220,9 +1069,7 @@ body {
 
     color:
         var(--texto-claro);
-
 }
-
 
 
 /* ======================================================
@@ -1240,9 +1087,7 @@ body {
     gap: 15px;
 
     margin: 30px 0;
-
 }
-
 
 
 .contador-item {
@@ -1263,9 +1108,7 @@ body {
     box-shadow:
         0 10px 30px
         rgba(70,50,30,0.08);
-
 }
-
 
 
 .contador-item span {
@@ -1280,9 +1123,7 @@ body {
 
     color:
         var(--dorado);
-
 }
-
 
 
 .contador-item small {
@@ -1293,9 +1134,7 @@ body {
 
     color:
         var(--texto-claro);
-
 }
-
 
 
 /* ======================================================
@@ -1307,9 +1146,7 @@ body {
     width: 100%;
 
     max-width: 600px;
-
 }
-
 
 
 .tarjeta {
@@ -1328,9 +1165,7 @@ body {
     box-shadow:
         0 15px 40px
         rgba(60,45,30,0.10);
-
 }
-
 
 
 .icono {
@@ -1341,9 +1176,7 @@ body {
         var(--dorado);
 
     margin-bottom: 15px;
-
 }
-
 
 
 .tarjeta h3 {
@@ -1357,9 +1190,7 @@ body {
     font-weight: 600;
 
     margin-bottom: 15px;
-
 }
-
 
 
 .tarjeta p {
@@ -1368,9 +1199,7 @@ body {
 
     color:
         var(--texto-claro);
-
 }
-
 
 
 .tarjeta .lugar {
@@ -1379,9 +1208,7 @@ body {
 
     color:
         var(--texto);
-
 }
-
 
 
 .detalle-evento {
@@ -1397,9 +1224,7 @@ body {
     margin: 20px auto !important;
 
     max-width: 450px;
-
 }
-
 
 
 .boton-pequeno {
@@ -1427,9 +1252,7 @@ body {
 
     transition:
         all 0.3s ease;
-
 }
-
 
 
 .boton-pequeno:hover {
@@ -1438,9 +1261,7 @@ body {
         var(--dorado);
 
     color: white;
-
 }
-
 
 
 /* ======================================================
@@ -1454,9 +1275,7 @@ body {
     max-width: 500px;
 
     margin: 20px auto;
-
 }
-
 
 
 .foto {
@@ -1471,9 +1290,7 @@ body {
     box-shadow:
         0 15px 40px
         rgba(50,40,30,0.15);
-
 }
-
 
 
 .foto img {
@@ -1490,18 +1307,14 @@ body {
 
     transition:
         transform 0.6s ease;
-
 }
-
 
 
 .foto:hover img {
 
     transform:
         scale(1.04);
-
 }
-
 
 
 /* ======================================================
@@ -1518,9 +1331,7 @@ body {
         );
 
     color: white;
-
 }
-
 
 
 .frase-final .corona {
@@ -1528,9 +1339,7 @@ body {
     opacity: 1;
 
     margin-bottom: 25px;
-
 }
-
 
 
 .frase-final p {
@@ -1550,9 +1359,7 @@ body {
 
     color:
         rgba(255,255,255,0.9);
-
 }
-
 
 
 .frase-final h2 {
@@ -1563,9 +1370,7 @@ body {
     margin-top: 30px;
 
     margin-bottom: 0;
-
 }
-
 
 
 /* ======================================================
@@ -1575,52 +1380,15 @@ body {
 .confirmacion {
 
     min-height: 80vh;
-
 }
 
 
+/* OCULTAR BOTÓN CONFIRMAR ASISTENCIA */
 
-.boton {
+.confirmacion a.boton {
 
-    display: inline-block;
-
-    margin-top: 25px;
-
-    padding: 16px 30px;
-
-    background:
-        var(--dorado);
-
-    color: white;
-
-    text-decoration: none;
-
-    border-radius: 30px;
-
-    font-size: 11px;
-
-    font-weight: 600;
-
-    letter-spacing: 2px;
-
-    transition:
-        all 0.3s ease;
-
+    display: none !important;
 }
-
-
-
-.boton:hover {
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 10px 25px
-        rgba(120,90,50,0.25);
-
-}
-
 
 
 /* ======================================================
@@ -1665,9 +1433,7 @@ body {
 
     transition:
         all 0.3s ease;
-
 }
-
 
 
 .boton-musica:hover {
@@ -1677,9 +1443,7 @@ body {
 
     background:
         rgba(184,148,85,0.9);
-
 }
-
 
 
 /* ======================================================
@@ -1697,9 +1461,7 @@ footer {
 
     color:
         rgba(255,255,255,0.7);
-
 }
-
 
 
 footer p {
@@ -1711,9 +1473,7 @@ footer p {
     font-size: 22px;
 
     margin-bottom: 8px;
-
 }
-
 
 
 footer strong {
@@ -1730,9 +1490,7 @@ footer strong {
 
     color:
         var(--dorado-claro);
-
 }
-
 
 
 footer small {
@@ -1744,23 +1502,19 @@ footer small {
     font-size: 10px;
 
     letter-spacing: 2px;
-
 }
 
 
-
 /* ======================================================
-   RESPONSIVE - CELULAR
+   CELULAR
    ====================================================== */
 
 @media (max-width: 600px) {
-
 
     .seccion {
 
         padding:
             50px 20px;
-
     }
 
 
@@ -1768,7 +1522,6 @@ footer small {
 
         padding:
             40px 20px;
-
     }
 
 
@@ -1776,17 +1529,28 @@ footer small {
 
         font-size:
             70px;
-
     }
 
+
+    /* NOMBRE MICHELLE EN CELULAR */
 
     .portada h2 {
 
         font-size:
-            24px;
+            25px;
 
-        max-width: 330px;
+        max-width:
+            340px;
 
+        font-weight:
+            600;
+
+        color:
+            #f5dca3;
+
+        text-shadow:
+            0 2px 8px rgba(0, 0, 0, 0.7),
+            0 0 14px rgba(216, 189, 131, 0.45);
     }
 
 
@@ -1797,7 +1561,6 @@ footer small {
 
         letter-spacing:
             5px;
-
     }
 
 
@@ -1808,7 +1571,6 @@ footer small {
 
         max-width:
             330px;
-
     }
 
 
@@ -1816,7 +1578,6 @@ footer small {
 
         font-size:
             55px;
-
     }
 
 
@@ -1824,7 +1585,6 @@ footer small {
 
         margin-top:
             25px;
-
     }
 
 
@@ -1832,7 +1592,6 @@ footer small {
 
         gap:
             14px;
-
     }
 
 
@@ -1840,7 +1599,6 @@ footer small {
 
         font-size:
             52px;
-
     }
 
 
@@ -1848,7 +1606,6 @@ footer small {
 
         height:
             55px;
-
     }
 
 
@@ -1856,7 +1613,6 @@ footer small {
 
         gap:
             8px;
-
     }
 
 
@@ -1867,7 +1623,6 @@ footer small {
 
         padding:
             18px 8px;
-
     }
 
 
@@ -1875,7 +1630,6 @@ footer small {
 
         font-size:
             34px;
-
     }
 
 
@@ -1886,7 +1640,6 @@ footer small {
 
         letter-spacing:
             1px;
-
     }
 
 
@@ -1894,7 +1647,6 @@ footer small {
 
         padding:
             30px 20px;
-
     }
 
 
@@ -1911,7 +1663,6 @@ footer small {
 
         right:
             15px;
-
     }
 
 
@@ -1919,11 +1670,9 @@ footer small {
 
         font-size:
             22px;
-
     }
 
 }
-
 
 
 /* ======================================================
@@ -1932,12 +1681,10 @@ footer small {
 
 @media (max-width: 380px) {
 
-
     .portada h1 {
 
         font-size:
             58px;
-
     }
 
 
@@ -1945,7 +1692,6 @@ footer small {
 
         font-size:
             21px;
-
     }
 
 
@@ -1953,7 +1699,6 @@ footer small {
 
         gap:
             8px;
-
     }
 
 
@@ -1961,7 +1706,6 @@ footer small {
 
         font-size:
             45px;
-
     }
 
 
@@ -1969,11 +1713,7 @@ footer small {
 
         min-width:
             65px;
-
     }
 
 }
-
-.confirmacion .boton{
-    display:none;
-}
+```
