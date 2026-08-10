@@ -229,59 +229,87 @@ if (abrirInvitacion) {
 MAPA
 ========================================== */
 
-const abrirMapa =
-document.getElementById("abrirMapa");
+const abrirMapa = document.getElementById("abrirMapa");
+const cerrarMapa = document.getElementById("cerrarMapa");
+const ventanaMapa = document.getElementById("ventanaMapa");
 
-const cerrarMapa =
-document.getElementById("cerrarMapa");
-
-const ventanaMapa =
-document.getElementById("ventanaMapa");
-
-/* Abrir mapa */
+/* ==========================================
+ABRIR MAPA
+========================================== */
 
 if (abrirMapa && ventanaMapa) {
 
-abrirMapa.addEventListener("click", function () {
+```
+abrirMapa.addEventListener("click", function(event) {
+
+    event.preventDefault();
+    event.stopPropagation();
 
     ventanaMapa.classList.add("mostrar-mapa");
 
     document.body.classList.add("mapa-abierto");
 
 });
+```
+
 }
 
-/* Cerrar mapa */
+/* ==========================================
+CERRAR MAPA CON X
+========================================== */
 
 if (cerrarMapa && ventanaMapa) {
 
-cerrarMapa.addEventListener("click", function () {
+```
+cerrarMapa.addEventListener("click", function(event) {
+
+    event.preventDefault();
+    event.stopPropagation();
 
     ventanaMapa.classList.remove("mostrar-mapa");
 
     document.body.classList.remove("mapa-abierto");
 
 });
+```
 
 }
 
-/* Cerrar tocando fuera */
+/* ==========================================
+CERRAR MAPA TOCANDO AFUERA
+========================================== */
 
 if (ventanaMapa) {
 
-ventanaMapa.addEventListener("click", function (event) {
+```
+ventanaMapa.addEventListener("click", function(event) {
+
     if (event.target === ventanaMapa) {
+
         ventanaMapa.classList.remove("mostrar-mapa");
+
         document.body.classList.remove("mapa-abierto");
+
     }
+
 });
-}
-/* Cerrar con ESC */
+```
 
-document.addEventListener("keydown", function (event) {
+}
+
+/* ==========================================
+CERRAR MAPA CON ESC
+========================================== */
+
+document.addEventListener("keydown", function(event) {
+
+```
 if (event.key === "Escape" && ventanaMapa) {
-    ventanaMapa.classList.remove("mostrar-mapa");
-    document.body.classList.remove("mapa-abierto");
-}
 
+    ventanaMapa.classList.remove("mostrar-mapa");
+
+    document.body.classList.remove("mapa-abierto");
+
+}
+```
 });
