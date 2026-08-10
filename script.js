@@ -123,108 +123,112 @@ botonMusica.addEventListener("click", function () {
 }
 
 /* ==========================================
-INVITACIÓN POR PASOS
+   INVITACIÓN POR PASOS
 ========================================== */
 
 const pasos = document.querySelectorAll(".paso");
 
 const botonesSiguiente =
-document.querySelectorAll(".boton-siguiente");
+    document.querySelectorAll(".boton-siguiente");
 
-const abrirInvitacion =
-document.getElementById("abrirInvitacion");
-
-const portada =
-document.querySelector(".portada");
-
-const invitacion =
-document.getElementById("invitacion");
 
 /* ==========================================
-INICIAR INVITACIÓN
+   MOSTRAR PRIMERA SECCIÓN
 ========================================== */
 
 function iniciarInvitacion() {
 
-```
-pasos.forEach(function (paso) {
+    pasos.forEach(function(paso) {
 
-    paso.classList.remove("activo");
+        paso.classList.remove("activo");
+
+    });
+
+    if (pasos.length > 0) {
+
+        pasos[0].classList.add("activo");
+
+    }
+
+}
+
+
+/* ==========================================
+   BOTONES SIGUIENTE
+========================================== */
+
+botonesSiguiente.forEach(function(boton, indice) {
+
+    boton.addEventListener("click", function() {
+
+        if (pasos[indice]) {
+
+            pasos[indice].classList.remove("activo");
+
+        }
+
+        if (pasos[indice + 1]) {
+
+            pasos[indice + 1].classList.add("activo");
+
+            pasos[indice + 1].scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    });
 
 });
 
-if (pasos.length > 0) {
-
-    pasos[0].classList.add("activo");
-
-}
-```
-
-}
 
 /* ==========================================
-ABRIR INVITACIÓN
+   ABRIR INVITACIÓN
 ========================================== */
+
+const abrirInvitacion =
+    document.querySelector('a[href="#invitacion"]');
+
+const portada =
+    document.querySelector(".portada");
+
+const invitacion =
+    document.getElementById("invitacion");
+
 
 if (abrirInvitacion) {
 
-```
-abrirInvitacion.addEventListener("click", function (event) {
+    abrirInvitacion.addEventListener("click", function(event) {
 
-    event.preventDefault();
+        event.preventDefault();
 
-    if (portada) {
+        /* Ocultar portada */
 
-        portada.classList.add("portada-oculta");
+        if (portada) {
 
-    }
+            portada.style.display = "none";
 
-    iniciarInvitacion();
+        }
 
-    if (invitacion) {
+        /* Mostrar primera sección */
 
-        window.scrollTo({
-            top: invitacion.offsetTop,
-            behavior: "smooth"
-        });
+        iniciarInvitacion();
 
-    }
+        /* Ir a la invitación */
 
-});
-```
+        if (invitacion) {
+
+            invitacion.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    });
 
 }
-
-/* ==========================================
-BOTONES SIGUIENTE
-========================================== */
-
-botonesSiguiente.forEach(function (boton, indice) {
-
-```
-boton.addEventListener("click", function () {
-
-    if (pasos[indice]) {
-
-        pasos[indice].classList.remove("activo");
-
-    }
-
-    if (pasos[indice + 1]) {
-
-        pasos[indice + 1].classList.add("activo");
-
-        pasos[indice + 1].scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-
-    }
-
-});
-```
-
-});
 
 /* ==========================================
 MAPA
