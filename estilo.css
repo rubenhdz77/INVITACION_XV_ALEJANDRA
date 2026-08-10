@@ -1,16 +1,16 @@
-```css
 /* ======================================================
    XV AÑOS - ALEJANDRA MICHELLE
-   DISEÑO ELEGANTE ROSA CHAMPAGNE
+   DISEÑO ROSA CHAMPAGNE + DORADO
    ====================================================== */
 
 :root {
-    --rosa: #f2b6c6;
-    --rosa-claro: #ffdce5;
-    --rosa-brillo: #ffeaf0;
+
+    --rosa: #f3b6c7;
+    --rosa-claro: #ffe1e9;
+    --rosa-brillo: #ffd0dc;
 
     --dorado: #b89455;
-    --dorado-claro: #e1c58e;
+    --dorado-claro: #f2d49a;
 
     --crema: #f8f4ec;
 
@@ -46,8 +46,7 @@ body {
             #eee4d4
         );
 
-    color:
-        var(--texto);
+    color: var(--texto);
 
     font-family:
         "Montserrat",
@@ -82,6 +81,10 @@ body {
     padding: 60px 25px;
 }
 
+
+/* ======================================================
+   SECCIÓN ACTIVA
+   ====================================================== */
 
 .seccion.activo {
 
@@ -125,14 +128,13 @@ body {
 
     overflow: hidden;
 
-    color:
-        white;
+    color: white;
 
     background:
 
         radial-gradient(
             circle at center,
-            rgba(255, 182, 198, 0.13),
+            rgba(255, 182, 198, 0.14),
             transparent 35%
         ),
 
@@ -144,7 +146,9 @@ body {
 }
 
 
-/* Brillo central */
+/* ======================================================
+   BRILLO DE FONDO
+   ====================================================== */
 
 .portada::before {
 
@@ -189,8 +193,7 @@ body {
     0%,
     100% {
 
-        opacity:
-            0.6;
+        opacity: 0.6;
 
         transform:
             translate(-50%, -50%)
@@ -199,8 +202,7 @@ body {
 
     50% {
 
-        opacity:
-            1;
+        opacity: 1;
 
         transform:
             translate(-50%, -50%)
@@ -210,7 +212,7 @@ body {
 
 
 /* ======================================================
-   CONTENIDO PORTADA
+   CONTENIDO DE PORTADA
    ====================================================== */
 
 .contenido-portada {
@@ -221,13 +223,15 @@ body {
 
     width: 100%;
 
-    max-width: 850px;
+    max-width: 900px;
 
     display: flex;
 
     flex-direction: column;
 
     align-items: center;
+
+    justify-content: center;
 }
 
 
@@ -241,24 +245,30 @@ body {
         "Montserrat",
         sans-serif;
 
-    font-size:
-        13px;
+    font-size: 13px;
 
-    letter-spacing:
-        7px;
+    letter-spacing: 7px;
 
-    font-weight:
-        500;
+    font-weight: 500;
 
     color:
-        var(--rosa-claro);
+        #f2d49a !important;
 
-    margin-bottom:
-        20px;
+    margin-bottom: 20px;
 
     text-shadow:
         0 0 10px
-        rgba(255, 220, 229, 0.35);
+        rgba(242, 212, 154, 0.35);
+
+    opacity: 0;
+
+    animation:
+        aparecerArriba
+        1s
+        ease
+        forwards;
+
+    animation-delay: 0.3s;
 }
 
 
@@ -272,30 +282,41 @@ body {
         "Cormorant Garamond",
         serif;
 
-    font-size:
-        65px;
+    font-size: 65px;
 
-    line-height:
-        1;
+    line-height: 1;
 
     color:
-        var(--dorado-claro);
+        #f2d49a !important;
 
     text-shadow:
 
         0 0 10px
-        rgba(225, 197, 142, 0.5),
+        rgba(225, 197, 142, 0.7),
 
         0 0 25px
-        rgba(242, 182, 198, 0.25);
+        rgba(242, 182, 198, 0.30);
 
-    margin-bottom:
-        10px;
+    margin-bottom: 10px;
+
+    opacity: 0;
+
+    transform:
+        scale(0.4)
+        rotate(-10deg);
+
+    animation:
+        aparecerCorona
+        1.2s
+        ease
+        forwards;
+
+    animation-delay: 0.6s;
 }
 
 
 /* ======================================================
-   ALEJANDRA
+   NOMBRE ALEJANDRA
    ====================================================== */
 
 .portada h1 {
@@ -316,23 +337,39 @@ body {
     letter-spacing:
         2px;
 
-    /* ROSA CHAMPAGNE */
+    /*
+       ROSA CHAMPAGNE
+       !important evita que otra regla
+       .seccion h2/h1 cambie el color
+    */
 
     color:
-        #f3b6c7;
-
-    /* Brillo elegante */
+        #f3b6c7 !important;
 
     text-shadow:
 
-        0 2px 4px
-        rgba(0, 0, 0, 0.55),
+        0 2px 5px
+        rgba(0, 0, 0, 0.75),
 
-        0 0 12px
-        rgba(243, 182, 199, 0.55),
+        0 0 15px
+        rgba(243, 182, 199, 0.80),
 
-        0 0 28px
-        rgba(243, 182, 199, 0.25);
+        0 0 35px
+        rgba(243, 182, 199, 0.40);
+
+    opacity: 0;
+
+    transform:
+        translateY(35px)
+        scale(0.92);
+
+    animation:
+        aparecerNombre
+        1.3s
+        ease
+        forwards;
+
+    animation-delay: 1s;
 }
 
 
@@ -347,7 +384,10 @@ body {
         serif;
 
     font-size:
-        clamp(23px, 4vw, 36px);
+        clamp(25px, 4vw, 38px);
+
+    line-height:
+        1.15;
 
     font-weight:
         600;
@@ -358,90 +398,136 @@ body {
     margin-top:
         18px;
 
+    /*
+       DORADO CLARO
+    */
+
     color:
-        #f1d49b;
+        #f5dca3 !important;
 
     text-shadow:
 
         0 2px 8px
-        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.85),
 
-        0 0 14px
-        rgba(225, 197, 142, 0.45);
+        0 0 12px
+        rgba(245, 220, 163, 0.65);
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    animation:
+        aparecerArriba
+        1s
+        ease
+        forwards;
+
+    animation-delay: 1.5s;
 }
 
 
 /* ======================================================
-   LÍNEA
+   LÍNEA DECORATIVA
    ====================================================== */
 
 .linea {
 
-    width:
-        160px;
+    width: 160px;
 
-    height:
-        1px;
+    height: 1px;
 
     background:
 
         linear-gradient(
             to right,
             transparent,
-            var(--rosa),
-            var(--dorado-claro),
+            #f3b6c7,
+            #f2d49a,
             transparent
         );
 
     margin:
         27px 0;
+
+    opacity: 0;
+
+    transform:
+        scaleX(0);
+
+    animation:
+        aparecerLinea
+        1s
+        ease
+        forwards;
+
+    animation-delay: 1.9s;
 }
 
 
 /* ======================================================
-   FRASE
+   FRASE DE PORTADA
    ====================================================== */
 
 .frase-portada {
 
-    max-width:
-        550px;
+    max-width: 550px;
 
     font-family:
         "Cormorant Garamond",
         serif;
 
-    font-size:
-        21px;
+    font-size: 21px;
 
-    line-height:
-        1.6;
+    line-height: 1.6;
 
-    font-style:
-        italic;
+    font-style: italic;
 
     color:
-        rgba(255,255,255,0.90);
+        rgba(255,255,255,0.92);
+
+    opacity: 0;
+
+    transform:
+        translateY(20px);
+
+    animation:
+        aparecerArriba
+        1s
+        ease
+        forwards;
+
+    animation-delay: 2.1s;
 }
 
 
 /* ======================================================
-   FECHA
+   FECHA DE PORTADA
    ====================================================== */
 
 .fecha-portada {
 
-    display:
-        flex;
+    display: flex;
 
-    align-items:
-        center;
+    align-items: center;
 
-    gap:
-        18px;
+    gap: 18px;
 
-    margin-top:
-        30px;
+    margin-top: 30px;
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    animation:
+        aparecerArriba
+        1s
+        ease
+        forwards;
+
+    animation-delay: 2.4s;
 }
 
 
@@ -451,83 +537,88 @@ body {
         "Cormorant Garamond",
         serif;
 
-    font-size:
-        68px;
+    font-size: 68px;
 
-    line-height:
-        1;
+    line-height: 1;
 
     color:
-        var(--rosa);
-    
+        #f3b6c7;
+
     text-shadow:
         0 0 15px
-        rgba(242, 182, 198, 0.3);
+        rgba(243, 182, 199, 0.35);
 }
 
 
 .fecha-portada > div {
 
-    display:
-        flex;
+    display: flex;
 
-    flex-direction:
-        column;
+    flex-direction: column;
 
-    align-items:
-        flex-start;
+    align-items: flex-start;
 
     border-left:
         1px solid
         rgba(225,197,142,0.6);
 
-    padding-left:
-        18px;
+    padding-left: 18px;
 }
 
 
 .fecha-portada strong {
 
-    font-size:
-        14px;
+    font-size: 14px;
 
-    letter-spacing:
-        4px;
+    letter-spacing: 4px;
 
-    font-weight:
-        500;
+    font-weight: 500;
+
+    color:
+        #ffffff;
 }
 
 
 .fecha-portada small {
 
-    margin-top:
-        4px;
+    margin-top: 4px;
 
-    font-size:
-        14px;
+    font-size: 14px;
 
-    letter-spacing:
-        3px;
+    letter-spacing: 3px;
 
     color:
-        var(--dorado-claro);
+        #f2d49a;
 }
 
 
+/* ======================================================
+   HORA
+   ====================================================== */
+
 .hora-portada {
 
-    margin-top:
-        15px;
+    margin-top: 15px;
 
-    font-size:
-        13px;
+    font-size: 13px;
 
-    letter-spacing:
-        4px;
+    letter-spacing: 4px;
 
     color:
-        rgba(255,255,255,0.85);
+        rgba(255,255,255,0.90);
+
+    opacity: 0;
+
+    transform:
+        translateY(20px);
+
+    animation:
+        aparecerArriba
+        1s
+        ease
+        forwards;
+
+    animation-delay: 2.7s;
 }
 
 
@@ -537,15 +628,14 @@ body {
 
 .boton-siguiente {
 
-    margin-top:
-        35px;
+    margin-top: 35px;
 
     padding:
         14px 34px;
 
     border:
         1px solid
-        var(--rosa);
+        #f3b6c7;
 
     border-radius:
         30px;
@@ -581,182 +671,11 @@ body {
 }
 
 
-.boton-siguiente:hover {
-
-    background:
-        var(--rosa);
-
-    color:
-        #321f27;
-
-    transform:
-        translateY(-3px);
-
-    box-shadow:
-        0 10px 30px
-        rgba(242,182,198,0.25);
-}
-
-
-/* ======================================================
-   ANIMACIÓN PORTADA
-   ====================================================== */
-
-.portada .texto-pequeno {
-
-    opacity:
-        0;
-
-    animation:
-        aparecerArriba
-        1s
-        ease
-        forwards;
-
-    animation-delay:
-        0.3s;
-}
-
-
-.portada .corona {
-
-    opacity:
-        0;
-
-    transform:
-        scale(0.4)
-        rotate(-10deg);
-
-    animation:
-        aparecerCorona
-        1.2s
-        ease
-        forwards;
-
-    animation-delay:
-        0.6s;
-}
-
-
-.portada h1 {
-
-    opacity:
-        0;
-
-    transform:
-        translateY(35px)
-        scale(0.95);
-
-    animation:
-        aparecerNombre
-        1.3s
-        ease
-        forwards;
-
-    animation-delay:
-        1s;
-}
-
-
-.portada h2 {
-
-    opacity:
-        0;
-
-    transform:
-        translateY(25px);
-
-    animation:
-        aparecerArriba
-        1s
-        ease
-        forwards;
-
-    animation-delay:
-        1.5s;
-}
-
-
-.portada .linea {
-
-    transform:
-        scaleX(0);
-
-    opacity:
-        0;
-
-    animation:
-        aparecerLinea
-        1s
-        ease
-        forwards;
-
-    animation-delay:
-        1.9s;
-}
-
-
-.portada .frase-portada {
-
-    opacity:
-        0;
-
-    transform:
-        translateY(20px);
-
-    animation:
-        aparecerArriba
-        1s
-        ease
-        forwards;
-
-    animation-delay:
-        2.1s;
-}
-
-
-.portada .fecha-portada {
-
-    opacity:
-        0;
-
-    transform:
-        translateY(25px);
-
-    animation:
-        aparecerArriba
-        1s
-        ease
-        forwards;
-
-    animation-delay:
-        2.4s;
-}
-
-
-.portada .hora-portada {
-
-    opacity:
-        0;
-
-    transform:
-        translateY(20px);
-
-    animation:
-        aparecerArriba
-        1s
-        ease
-        forwards;
-
-    animation-delay:
-        2.7s;
-}
-
+/* BOTÓN DE PORTADA */
 
 .portada .boton-siguiente {
 
-    opacity:
-        0;
+    opacity: 0;
 
     transform:
         translateY(20px);
@@ -772,6 +691,23 @@ body {
 }
 
 
+.boton-siguiente:hover {
+
+    background:
+        #f3b6c7;
+
+    color:
+        #321f27;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(242,182,198,0.30);
+}
+
+
 /* ======================================================
    ANIMACIONES
    ====================================================== */
@@ -780,8 +716,7 @@ body {
 
     from {
 
-        opacity:
-            0;
+        opacity: 0;
 
         transform:
             translateY(30px);
@@ -789,8 +724,7 @@ body {
 
     to {
 
-        opacity:
-            1;
+        opacity: 1;
 
         transform:
             translateY(0);
@@ -802,8 +736,7 @@ body {
 
     0% {
 
-        opacity:
-            0;
+        opacity: 0;
 
         transform:
             translateY(35px)
@@ -815,8 +748,7 @@ body {
 
     60% {
 
-        opacity:
-            1;
+        opacity: 1;
 
         transform:
             translateY(-3px)
@@ -828,8 +760,7 @@ body {
 
     100% {
 
-        opacity:
-            1;
+        opacity: 1;
 
         transform:
             translateY(0)
@@ -845,8 +776,7 @@ body {
 
     0% {
 
-        opacity:
-            0;
+        opacity: 0;
 
         transform:
             scale(0.4)
@@ -858,8 +788,7 @@ body {
 
     60% {
 
-        opacity:
-            1;
+        opacity: 1;
 
         transform:
             scale(1.15)
@@ -871,8 +800,7 @@ body {
 
     100% {
 
-        opacity:
-            1;
+        opacity: 1;
 
         transform:
             scale(1)
@@ -885,8 +813,7 @@ body {
 
     from {
 
-        opacity:
-            0;
+        opacity: 0;
 
         transform:
             scaleX(0);
@@ -894,8 +821,7 @@ body {
 
     to {
 
-        opacity:
-            1;
+        opacity: 1;
 
         transform:
             scaleX(1);
@@ -907,8 +833,7 @@ body {
 
     from {
 
-        opacity:
-            0;
+        opacity: 0;
 
         transform:
             translateY(25px);
@@ -916,8 +841,7 @@ body {
 
     to {
 
-        opacity:
-            1;
+        opacity: 1;
 
         transform:
             translateY(0);
@@ -957,7 +881,7 @@ body {
         3px;
 
     background:
-        var(--rosa-claro);
+        #ffe1e9;
 
     border-radius:
         50%;
@@ -977,8 +901,7 @@ body {
 
     0% {
 
-        opacity:
-            0;
+        opacity: 0;
 
         transform:
             translateY(0)
@@ -987,20 +910,17 @@ body {
 
     20% {
 
-        opacity:
-            0.8;
+        opacity: 0.8;
     }
 
     80% {
 
-        opacity:
-            0.5;
+        opacity: 0.5;
     }
 
     100% {
 
-        opacity:
-            0;
+        opacity: 0;
 
         transform:
             translateY(-100vh)
@@ -1029,9 +949,13 @@ body {
         );
 
     color:
-        var(--texto);
+        #4a4036;
 }
 
+
+/* ======================================================
+   TÍTULOS INTERNOS
+   ====================================================== */
 
 .seccion h2 {
 
@@ -1053,6 +977,15 @@ body {
 }
 
 
+/*
+   IMPORTANTE:
+
+   Esta regla afecta a todos los h2,
+   PERO NO A LA PORTADA,
+   porque .portada h2 tiene !important.
+*/
+
+
 .subtitulo {
 
     font-size:
@@ -1062,7 +995,7 @@ body {
         5px;
 
     color:
-        var(--dorado);
+        #b89455;
 
     font-weight:
         600;
@@ -1088,7 +1021,7 @@ body {
         1.7;
 
     color:
-        var(--texto-claro);
+        #766b60;
 
     margin:
         10px auto;
@@ -1101,7 +1034,7 @@ body {
         35px;
 
     color:
-        var(--dorado);
+        #b89455;
 
     margin-bottom:
         20px;
@@ -1121,7 +1054,7 @@ body {
         italic;
 
     color:
-        var(--dorado);
+        #b89455;
 
     margin-top:
         30px;
@@ -1129,7 +1062,7 @@ body {
 
 
 /* ======================================================
-   FECHA
+   FECHA GRANDE
    ====================================================== */
 
 .fecha-grande {
@@ -1174,7 +1107,7 @@ body {
         clamp(50px, 10vw, 85px);
 
     color:
-        var(--dorado);
+        #b89455;
 }
 
 
@@ -1187,7 +1120,7 @@ body {
         3px;
 
     color:
-        var(--texto-claro);
+        #766b60;
 }
 
 
@@ -1200,7 +1133,7 @@ body {
         70px;
 
     background:
-        var(--dorado-claro);
+        #e1c58e;
 }
 
 
@@ -1213,7 +1146,7 @@ body {
         3px;
 
     color:
-        var(--texto-claro);
+        #766b60;
 }
 
 
@@ -1277,7 +1210,7 @@ body {
         45px;
 
     color:
-        var(--dorado);
+        #b89455;
 }
 
 
@@ -1290,7 +1223,7 @@ body {
         2px;
 
     color:
-        var(--texto-claro);
+        #766b60;
 }
 
 
@@ -1335,7 +1268,7 @@ body {
         45px;
 
     color:
-        var(--dorado);
+        #b89455;
 
     margin-bottom:
         15px;
@@ -1365,7 +1298,7 @@ body {
         8px 0;
 
     color:
-        var(--texto-claro);
+        #766b60;
 }
 
 
@@ -1375,7 +1308,7 @@ body {
         600;
 
     color:
-        var(--texto);
+        #4a4036;
 }
 
 
@@ -1399,6 +1332,10 @@ body {
 }
 
 
+/* ======================================================
+   BOTÓN UBICACIÓN
+   ====================================================== */
+
 .boton-pequeno {
 
     display:
@@ -1412,13 +1349,13 @@ body {
 
     border:
         1px solid
-        var(--dorado);
+        #b89455;
 
     border-radius:
         25px;
 
     color:
-        var(--dorado);
+        #b89455;
 
     text-decoration:
         none;
@@ -1437,7 +1374,7 @@ body {
 .boton-pequeno:hover {
 
     background:
-        var(--dorado);
+        #b89455;
 
     color:
         white;
@@ -1532,6 +1469,12 @@ body {
 
     margin-bottom:
         25px;
+
+    transform:
+        none;
+
+    animation:
+        none;
 }
 
 
@@ -1561,7 +1504,7 @@ body {
 .frase-final h2 {
 
     color:
-        var(--rosa-claro);
+        #ffe1e9;
 
     margin-top:
         30px;
@@ -1582,7 +1525,9 @@ body {
 }
 
 
-/* OCULTAR CONFIRMAR ASISTENCIA */
+/* ======================================================
+   OCULTAR CONFIRMAR ASISTENCIA
+   ====================================================== */
 
 .confirmacion a.boton {
 
@@ -1592,7 +1537,7 @@ body {
 
 
 /* ======================================================
-   BOTÓN MÚSICA
+   BOTÓN DE MÚSICA
    ====================================================== */
 
 .boton-musica {
@@ -1709,7 +1654,7 @@ footer strong {
         500;
 
     color:
-        var(--rosa-claro);
+        #ffe1e9;
 }
 
 
@@ -1749,7 +1694,7 @@ footer small {
     }
 
 
-    /* ALEJANDRA EN CELULAR */
+    /* ALEJANDRA */
 
     .portada h1 {
 
@@ -1757,22 +1702,22 @@ footer small {
             70px;
 
         color:
-            #f3b6c7;
+            #f3b6c7 !important;
 
         text-shadow:
 
             0 2px 5px
-            rgba(0,0,0,0.6),
+            rgba(0,0,0,0.75),
 
-            0 0 14px
-            rgba(243,182,199,0.6),
+            0 0 15px
+            rgba(243,182,199,0.80),
 
-            0 0 28px
-            rgba(243,182,199,0.3);
+            0 0 30px
+            rgba(243,182,199,0.40);
     }
 
 
-    /* MICHELLE EN CELULAR */
+    /* MICHELLE */
 
     .portada h2 {
 
@@ -1786,15 +1731,15 @@ footer small {
             600;
 
         color:
-            #f5dca3;
+            #f5dca3 !important;
 
         text-shadow:
 
             0 2px 8px
-            rgba(0,0,0,0.75),
+            rgba(0,0,0,0.85),
 
             0 0 14px
-            rgba(216,189,131,0.5);
+            rgba(216,189,131,0.60);
     }
 
 
@@ -1929,6 +1874,9 @@ footer small {
 
         font-size:
             58px;
+
+        color:
+            #f3b6c7 !important;
     }
 
 
@@ -1936,6 +1884,9 @@ footer small {
 
         font-size:
             21px;
+
+        color:
+            #f5dca3 !important;
     }
 
 
@@ -1960,4 +1911,3 @@ footer small {
     }
 
 }
-```
