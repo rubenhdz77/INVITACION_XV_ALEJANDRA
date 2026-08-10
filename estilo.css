@@ -1,0 +1,1111 @@
+/* ==========================================
+   CONFIGURACIÓN GENERAL
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #fdf9f7;
+    color: #4d3a3f;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+.firma {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+section {
+    position: relative;
+}
+
+
+/* ==========================================
+   BOTÓN MÚSICA
+========================================== */
+
+.boton-musica {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.7);
+
+    background: rgba(100,70,80,.8);
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 1000;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+
+    transition: .3s;
+}
+
+.boton-musica:hover {
+    transform: scale(1.1);
+}
+
+
+/* ==========================================
+   PORTADA
+========================================== */
+
+.portada {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(60,38,47,.72),
+            rgba(60,38,47,.78)
+        ),
+        radial-gradient(
+            circle at center,
+            #d8b5bd,
+            #73515d 70%,
+            #3f2932
+        );
+
+    overflow: hidden;
+}
+
+.contenido-portada {
+    position: relative;
+
+    max-width: 800px;
+
+    padding: 40px 25px;
+
+    z-index: 2;
+
+    animation: aparecer 1.5s ease;
+}
+
+.texto-pequeno {
+    letter-spacing: 7px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.corona {
+    font-size: 50px;
+    margin-bottom: 5px;
+}
+
+.portada h1 {
+    font-size: clamp(70px, 12vw, 130px);
+    line-height: .75;
+
+    font-weight: 500;
+}
+
+.portada h2 {
+    font-size: clamp(22px, 4vw, 38px);
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.linea {
+    width: 100px;
+    height: 1px;
+
+    background: rgba(255,255,255,.8);
+
+    margin: 25px auto;
+}
+
+.frase-portada {
+    max-width: 500px;
+    margin: auto;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 20px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.fecha-portada {
+    margin: 30px auto 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.fecha-portada > span {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 65px;
+    line-height: 1;
+}
+
+.fecha-portada div {
+    text-align: left;
+}
+
+.fecha-portada strong {
+    display: block;
+
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.fecha-portada small {
+    font-size: 15px;
+}
+
+.hora-portada {
+    font-size: 15px;
+    letter-spacing: 3px;
+
+    margin-bottom: 30px;
+}
+
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+.boton {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,.7);
+
+    text-decoration: none;
+
+    font-size: 11px;
+    letter-spacing: 2px;
+
+    transition: .3s;
+}
+
+.boton:hover {
+    background: white;
+    color: #60434d;
+}
+
+.boton-pequeno {
+    display: inline-block;
+
+    padding: 10px 18px;
+
+    border: 1px solid #a8838d;
+
+    color: #6d4e58;
+
+    text-decoration: none;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+
+    transition: .3s;
+}
+
+.boton-pequeno:hover {
+    background: #6d4e58;
+    color: white;
+}
+
+
+/* ==========================================
+   SECCIONES
+========================================== */
+
+.seccion {
+    padding: 100px 25px;
+
+    text-align: center;
+}
+
+.subtitulo {
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #a07884;
+
+    margin-bottom: 15px;
+}
+
+.seccion h2 {
+    font-size: clamp(42px, 7vw, 65px);
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    margin-bottom: 30px;
+}
+
+.texto {
+    max-width: 650px;
+
+    margin: 0 auto 20px;
+
+    line-height: 1.9;
+
+    font-size: 15px;
+}
+
+.adorno {
+    font-size: 25px;
+
+    color: #a07884;
+
+    margin-bottom: 20px;
+}
+
+.firma {
+    font-size: 40px;
+
+    font-style: italic;
+
+    color: #805c68;
+
+    margin-top: 30px;
+}
+
+
+/* ==========================================
+   BIENVENIDA
+========================================== */
+
+.bienvenida {
+    background: #fffaf8;
+}
+
+
+/* ==========================================
+   FECHA
+========================================== */
+
+.fecha {
+    background: #ead9dc;
+
+    color: #5a4048;
+}
+
+.fecha-grande {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 30px;
+
+    margin: 40px auto;
+}
+
+.fecha-grande div:not(.separador) {
+    display: flex;
+    flex-direction: column;
+}
+
+.fecha-grande span {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 50px;
+
+    line-height: 1;
+}
+
+.fecha-grande small {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    margin-top: 7px;
+}
+
+.separador {
+    height: 60px;
+    width: 1px;
+
+    background: rgba(90,64,72,.35);
+}
+
+.hora {
+    font-size: 18px;
+
+    letter-spacing: 2px;
+}
+
+
+/* ==========================================
+   CUENTA REGRESIVA
+========================================== */
+
+.cuenta {
+    background: #fffaf8;
+}
+
+.contador {
+    max-width: 700px;
+
+    margin: 40px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.contador-item {
+    padding: 25px 10px;
+
+    border: 1px solid #ddc4c9;
+}
+
+.contador-item span {
+    display: block;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 45px;
+
+    color: #795764;
+}
+
+.contador-item small {
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #987783;
+}
+
+
+/* ==========================================
+   EVENTO
+========================================== */
+
+.evento {
+    background: #ead9dc;
+}
+
+.tarjetas-evento {
+    max-width: 850px;
+
+    margin: 50px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+}
+
+.tarjeta {
+    background: rgba(255,255,255,.7);
+
+    padding: 45px 25px;
+
+    border: 1px solid rgba(120,80,90,.15);
+
+    box-shadow: 0 10px 30px rgba(80,50,60,.08);
+}
+
+.icono {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.tarjeta h3 {
+    font-size: 35px;
+
+    font-weight: 500;
+
+    margin-bottom: 15px;
+}
+
+.tarjeta p {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+}
+
+.tarjeta .lugar {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 22px;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================
+   GALERÍA
+========================================== */
+
+.galeria {
+    background: #fffaf8;
+}
+
+.fotos {
+    max-width: 950px;
+
+    margin: 50px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.foto {
+    height: 400px;
+
+    overflow: hidden;
+
+    border: 8px solid white;
+
+    box-shadow: 0 10px 30px rgba(80,50,60,.12);
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform .6s ease;
+}
+
+.foto:hover img {
+    transform: scale(1.08);
+}
+
+
+/* ==========================================
+   FRASE FINAL
+========================================== */
+
+.frase-final {
+    background:
+        linear-gradient(
+            rgba(60,38,47,.85),
+            rgba(60,38,47,.9)
+        ),
+        #70515d;
+
+    color: white;
+}
+
+.frase-final p {
+    max-width: 600px;
+
+    margin: auto;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 27px;
+
+    line-height: 1.5;
+
+    font-style: italic;
+}
+
+.frase-final h2 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.frase-final .firma {
+    color: white;
+}
+
+
+/* ==========================================
+   CONFIRMACIÓN
+========================================== */
+
+.confirmacion {
+    background: #fffaf8;
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+    text-align: center;
+
+    padding: 50px 20px;
+
+    background: #3f2932;
+
+    color: white;
+}
+
+footer p {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 20px;
+
+    margin-bottom: 5px;
+}
+
+footer strong {
+    display: block;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 25px;
+
+    font-weight: 500;
+}
+
+footer small {
+    display: block;
+
+    margin-top: 15px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    opacity: .7;
+}
+
+
+/* ==========================================
+   ANIMACIONES
+========================================== */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ==========================================
+   CELULARES
+========================================== */
+
+/* ==========================================
+   ADAPTACIÓN PARA CELULARES
+========================================== */
+
+@media (max-width: 700px) {
+
+    /* ------------------------------
+       GENERAL
+    ------------------------------ */
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+
+    /* ------------------------------
+       BOTÓN DE MÚSICA
+    ------------------------------ */
+
+    .boton-musica {
+        width: 42px;
+        height: 42px;
+
+        right: 12px;
+        top: 12px;
+
+        font-size: 17px;
+    }
+
+
+    /* ------------------------------
+       PORTADA
+    ------------------------------ */
+
+    .portada {
+        width: 100%;
+        min-height: 100svh;
+
+        padding: 20px 15px;
+    }
+
+    .contenido-portada {
+        width: 100%;
+        max-width: 100%;
+
+        padding: 25px 10px;
+    }
+
+    .texto-pequeno {
+        font-size: 10px;
+        letter-spacing: 4px;
+
+        margin-bottom: 12px;
+    }
+
+    .corona {
+        font-size: 40px;
+    }
+
+    .portada h1 {
+        /*
+        Se adapta automáticamente
+        al ancho del celular
+        */
+        font-size: clamp(55px, 18vw, 82px);
+
+        line-height: .85;
+
+        word-break: normal;
+    }
+
+    .portada h2 {
+        font-size: clamp(20px, 6vw, 28px);
+
+        line-height: 1.2;
+
+        margin-top: 18px;
+    }
+
+    .linea {
+        width: 80px;
+
+        margin: 20px auto;
+    }
+
+    .frase-portada {
+        width: 100%;
+        max-width: 340px;
+
+        font-size: 17px;
+
+        line-height: 1.5;
+    }
+
+
+    /* ------------------------------
+       FECHA DE PORTADA
+    ------------------------------ */
+
+    .fecha-portada {
+        margin: 25px auto 10px;
+
+        gap: 10px;
+    }
+
+    .fecha-portada > span {
+        font-size: clamp(48px, 16vw, 65px);
+    }
+
+    .fecha-portada strong {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .fecha-portada small {
+        font-size: 13px;
+    }
+
+    .hora-portada {
+        font-size: 12px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 25px;
+    }
+
+
+    /* ------------------------------
+       BOTONES
+    ------------------------------ */
+
+    .boton {
+        max-width: 100%;
+
+        padding: 13px 20px;
+
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+
+        white-space: nowrap;
+    }
+
+    .boton-pequeno {
+        max-width: 100%;
+
+        padding: 10px 15px;
+
+        font-size: 9px;
+    }
+
+
+    /* ------------------------------
+       SECCIONES
+    ------------------------------ */
+
+    .seccion {
+        width: 100%;
+        min-height: 100svh;
+
+        padding: 65px 18px;
+
+        overflow: hidden;
+    }
+
+    .seccion h2 {
+        width: 100%;
+
+        font-size: clamp(38px, 11vw, 58px);
+
+        line-height: 1.05;
+
+        margin-bottom: 25px;
+    }
+
+    .subtitulo {
+        font-size: 9px;
+
+        letter-spacing: 3px;
+    }
+
+    .texto {
+        width: 100%;
+        max-width: 350px;
+
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+    .firma {
+        max-width: 100%;
+
+        font-size: clamp(30px, 10vw, 40px);
+
+        word-break: normal;
+    }
+
+
+    /* ------------------------------
+       FECHA
+    ------------------------------ */
+
+    .fecha-grande {
+        width: 100%;
+
+        gap: 12px;
+
+        margin: 30px auto;
+    }
+
+    .fecha-grande span {
+        font-size: clamp(32px, 11vw, 48px);
+    }
+
+    .fecha-grande small {
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+    .separador {
+        height: 45px;
+    }
+
+    .hora {
+        font-size: 16px;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* ------------------------------
+       CUENTA REGRESIVA
+    ------------------------------ */
+
+    .contador {
+        width: 100%;
+        max-width: 350px;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 10px;
+
+        margin: 30px auto 0;
+    }
+
+    .contador-item {
+        padding: 18px 5px;
+    }
+
+    .contador-item span {
+        font-size: clamp(32px, 11vw, 45px);
+    }
+
+    .contador-item small {
+        font-size: 7px;
+
+        letter-spacing: 1px;
+    }
+
+
+    /* ------------------------------
+       EVENTO
+    ------------------------------ */
+
+    .tarjetas-evento {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        margin: 30px auto 0;
+    }
+
+    .tarjeta {
+        width: 100%;
+
+        padding: 30px 18px;
+    }
+
+    .tarjeta h3 {
+        font-size: clamp(28px, 9vw, 35px);
+
+        line-height: 1.1;
+    }
+
+    .tarjeta p {
+        font-size: 13px;
+    }
+
+    .tarjeta .lugar {
+        font-size: 20px;
+
+        line-height: 1.3;
+    }
+
+    .detalle-evento {
+        width: 100%;
+
+        font-size: 17px !important;
+
+        line-height: 1.5;
+    }
+
+
+    /* ------------------------------
+       GALERÍA
+    ------------------------------ */
+
+    .fotos {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        margin: 30px auto 0;
+    }
+
+    .foto-unica,
+    .foto {
+        width: 100%;
+
+        max-width: 340px;
+
+        /*
+        La altura se adapta
+        según el ancho de pantalla
+        */
+        height: min(480px, 125vw);
+
+        min-height: 350px;
+
+        margin: 0 auto;
+    }
+
+
+    /* ------------------------------
+       FRASE FINAL
+    ------------------------------ */
+
+    .frase-final p {
+        width: 100%;
+        max-width: 340px;
+
+        font-size: clamp(20px, 6vw, 27px);
+
+        line-height: 1.5;
+    }
+
+
+    /* ------------------------------
+       BOTÓN SIGUIENTE
+    ------------------------------ */
+
+    .boton-siguiente {
+        max-width: 90%;
+
+        margin: 35px auto 0;
+
+        padding: 13px 22px;
+
+        font-size: 10px;
+    }
+
+
+    /* ------------------------------
+       FOOTER
+    ------------------------------ */
+
+    footer {
+        width: 100%;
+
+        padding: 40px 15px;
+    }
+
+    footer strong {
+        font-size: 21px;
+
+        line-height: 1.3;
+    }
+
+    footer small {
+        font-size: 8px;
+
+        line-height: 1.5;
+    }
+
+}
+
+
+.detalle-evento {
+    max-width: 450px;
+    margin: 20px auto 25px !important;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 19px !important;
+
+    line-height: 1.5;
+
+    font-style: italic;
+
+    color: #795764;
+}
+
+.foto-unica {
+    max-width: 500px;
+    width: 100%;
+    height: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   INVITACIÓN POR PASOS
+========================================== */
+
+.paso {
+    display: none !important;
+}
+
+.paso.activo {
+    display: block !important;
+    animation: aparecerPaso 0.8s ease;
+}
+
+.boton-siguiente {
+    display: block;
+
+    margin: 45px auto 0;
+
+    background: transparent;
+
+    color: #795764;
+
+    border: 1px solid #a8838d;
+
+    cursor: pointer;
+
+    font-family: 'Montserrat', sans-serif;
+
+    padding: 14px 28px;
+
+    letter-spacing: 2px;
+
+    font-size: 11px;
+
+    transition: all 0.3s ease;
+}
+
+.boton-siguiente:hover {
+    background: #795764;
+    color: white;
+
+    transform: translateY(-3px);
+}
+
+@keyframes aparecerPaso {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
