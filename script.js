@@ -64,9 +64,12 @@ const botonMusica = document.getElementById("botonMusica");
 
 let reproduciendo = false;
 
-if (musica && botonMusica) {
+/* Intentar iniciar música automáticamente */
 
-window.addEventListener("load", function () {
+if (musica) {
+
+```
+window.addEventListener("load", function() {
 
     musica.volume = 0.5;
 
@@ -75,25 +78,38 @@ window.addEventListener("load", function () {
     if (intento !== undefined) {
 
         intento
-            .then(function () {
+            .then(function() {
 
                 reproduciendo = true;
-                botonMusica.innerHTML = "🔊";
+
+                if (botonMusica) {
+                    botonMusica.innerHTML = "🔊";
+                }
 
             })
-            .catch(function () {
+            .catch(function() {
 
                 reproduciendo = false;
-                botonMusica.innerHTML = "🎵";
+
+                if (botonMusica) {
+                    botonMusica.innerHTML = "🎵";
+                }
 
             });
 
     }
 
 });
+```
 
+}
 
-botonMusica.addEventListener("click", function () {
+/* Botón de música */
+
+if (musica && botonMusica) {
+
+```
+botonMusica.addEventListener("click", function() {
 
     if (reproduciendo) {
 
@@ -114,6 +130,7 @@ botonMusica.addEventListener("click", function () {
     }
 
 });
+```
 
 }
 
