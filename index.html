@@ -1,94 +1,179 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#8f6b3d">
 
     <title>XV Años | Alejandra Michelle</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- ==================================================
+         FUENTES
+    =================================================== -->
 
-    <!-- Hoja de estilos -->
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+          rel="stylesheet">
+
+
+    <!-- ==================================================
+         CSS
+    =================================================== -->
+
+    <link rel="stylesheet"
+          href="estilo.css">
+
 </head>
+
 
 <body>
 
-    <!-- ==========================================
-         BOTÓN DE MÚSICA
-    =========================================== -->
 
-    <button id="botonMusica" class="boton-musica">
+    <!-- ==================================================
+         BOTÓN DE MÚSICA
+    =================================================== -->
+
+    <button id="botonMusica"
+            class="boton-musica"
+            aria-label="Controlar música">
+
         🎵
+
     </button>
 
-    
-        <source src="musica.mp3" type="audio/mpeg">
+
+    <!-- ==================================================
+         MÚSICA
+    =================================================== -->
+
+    <audio id="musica"
+           loop
+           autoplay>
+
+        <source src="musica.mp3"
+                type="audio/mpeg">
+
     </audio>
 
-    <!-- ==========================================
-         PORTADA
-    =========================================== -->
 
-    <section class="seccion portada paso">
-    
-        <div class="particulas"></div>
-        
+
+    <!-- ==================================================
+         PORTADA
+    =================================================== -->
+
+    <section class="seccion portada paso activo">
+
+        <!-- Fondo decorativo -->
+
+        <div class="particulas">
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+
         <div class="contenido-portada">
+
 
             <p class="texto-pequeno">
                 MIS XV AÑOS
             </p>
 
+
             <div class="corona">
                 ♕
             </div>
+
 
             <h1>
                 Alejandra
             </h1>
 
+
             <h2>
                 Michelle Hernández Muñoz
             </h2>
 
+
             <div class="linea"></div>
 
+
             <p class="frase-portada">
+
                 "Hay momentos en la vida que se convierten
                 en recuerdos para toda la vida."
+
             </p>
 
+
             <div class="fecha-portada">
-                <span>05</span>
+
+                <span>
+                    05
+                </span>
+
                 <div>
-                    <strong>SEPTIEMBRE</strong>
-                    <small>2026</small>
+
+                    <strong>
+                        SEPTIEMBRE
+                    </strong>
+
+                    <small>
+                        2026
+                    </small>
+
                 </div>
+
             </div>
+
 
             <p class="hora-portada">
                 4:00 PM
             </p>
 
+
             <button class="boton-siguiente">
                 SIGUIENTE →
             </button>
+
 
         </div>
 
     </section>
 
 
-    <!-- ==========================================
+
+    <!-- ==================================================
          INVITACIÓN
-    =========================================== -->
+    =================================================== -->
 
     <main id="invitacion">
+
+
+        <!-- ==================================================
+             BIENVENIDA
+        =================================================== -->
 
         <section class="seccion bienvenida paso">
 
@@ -96,29 +181,41 @@
                 ✦
             </div>
 
+
             <p class="subtitulo">
                 CON MUCHO AMOR
             </p>
 
+
             <h2>
+
                 Quiero compartir<br>
                 este día contigo
+
             </h2>
 
+
             <p class="texto">
+
                 Hoy comienza una nueva etapa de mi vida,
                 y quiero celebrar este momento tan especial
                 rodeada de las personas que quiero.
+
             </p>
 
+
             <p class="texto">
+
                 Será un honor contar con tu presencia
                 en la celebración de mis XV años.
+
             </p>
+
 
             <div class="firma">
                 Alejandra Michelle
             </div>
+
 
             <button class="boton-siguiente">
                 SIGUIENTE →
@@ -127,9 +224,10 @@
         </section>
 
 
-        <!-- ==========================================
+
+        <!-- ==================================================
              FECHA
-        =========================================== -->
+        =================================================== -->
 
         <section class="seccion fecha paso">
 
@@ -137,47 +235,79 @@
                 RESERVA LA FECHA
             </p>
 
+
             <h2>
                 Mis XV Años
             </h2>
 
+
             <div class="fecha-grande">
 
+
                 <div>
-                    <span>05</span>
-                    <small>DÍA</small>
+
+                    <span>
+                        05
+                    </span>
+
+                    <small>
+                        DÍA
+                    </small>
+
                 </div>
+
 
                 <div class="separador"></div>
 
+
                 <div>
-                    <span>09</span>
-                    <small>MES</small>
+
+                    <span>
+                        09
+                    </span>
+
+                    <small>
+                        MES
+                    </small>
+
                 </div>
+
 
                 <div class="separador"></div>
 
+
                 <div>
-                    <span>2026</span>
-                    <small>AÑO</small>
+
+                    <span>
+                        2026
+                    </span>
+
+                    <small>
+                        AÑO
+                    </small>
+
                 </div>
+
 
             </div>
+
 
             <p class="hora">
                 🕓 4:00 PM
             </p>
 
+
             <button class="boton-siguiente">
                 SIGUIENTE →
             </button>
-            
+
         </section>
 
 
-        <!-- ==========================================
+
+        <!-- ==================================================
              CUENTA REGRESIVA
-        =========================================== -->
+        =================================================== -->
 
         <section class="seccion cuenta paso">
 
@@ -185,33 +315,69 @@
                 FALTA MUY POCO
             </p>
 
+
             <h2>
                 Cuenta regresiva
             </h2>
 
+
             <div class="contador">
 
-                <div class="contador-item">
-                    <span id="dias">00</span>
-                    <small>DÍAS</small>
-                </div>
 
                 <div class="contador-item">
-                    <span id="horas">00</span>
-                    <small>HORAS</small>
+
+                    <span id="dias">
+                        00
+                    </span>
+
+                    <small>
+                        DÍAS
+                    </small>
+
                 </div>
 
-                <div class="contador-item">
-                    <span id="minutos">00</span>
-                    <small>MINUTOS</small>
-                </div>
 
                 <div class="contador-item">
-                    <span id="segundos">00</span>
-                    <small>SEGUNDOS</small>
+
+                    <span id="horas">
+                        00
+                    </span>
+
+                    <small>
+                        HORAS
+                    </small>
+
                 </div>
+
+
+                <div class="contador-item">
+
+                    <span id="minutos">
+                        00
+                    </span>
+
+                    <small>
+                        MINUTOS
+                    </small>
+
+                </div>
+
+
+                <div class="contador-item">
+
+                    <span id="segundos">
+                        00
+                    </span>
+
+                    <small>
+                        SEGUNDOS
+                    </small>
+
+                </div>
+
 
             </div>
+
 
             <button class="boton-siguiente">
                 SIGUIENTE →
@@ -220,9 +386,10 @@
         </section>
 
 
-        <!-- ==========================================
+
+        <!-- ==================================================
              EVENTO
-        =========================================== -->
+        =================================================== -->
 
         <section class="seccion evento paso">
 
@@ -230,53 +397,78 @@
                 CELEBREMOS JUNTOS
             </p>
 
+
             <h2>
                 El gran día
             </h2>
 
+
             <div class="tarjetas-evento">
+
+
                 <div class="tarjeta">
+
+
                     <div class="icono">
                         ♕
                     </div>
+
+
                     <h3>
                         Ceremonia & Recepción
                     </h3>
-                    <p>
+
+
+                    <p class="hora-evento">
                         🕓 4:00 PM
                     </p>
+
+
                     <p class="lugar">
                         Polideportivo Victoria Gasteiz
                     </p>
+
 
                     <p>
                         Nejapa, San Salvador
                     </p>
 
+
                     <p class="detalle-evento">
-                        Celebraremos juntos este momento tan
-                        especial en un mismo lugar.
+
+                        Celebraremos juntos este momento
+                        tan especial en un mismo lugar.
+
                     </p>
 
-                    <a
-                    href="https://www.google.com/maps/search/?api=1&query=Polideportivo+Victoria+Gasteiz+Nejapa+San+Salvador"
-                    target="_blank"
-                    class="boton-pequeno">
-                    📍 VER UBICACIÓN
-                </a>
-                
+
+                    <a href="https://www.google.com/maps/search/?api=1&query=Polideportivo+Victoria+Gasteiz+Nejapa+San+Salvador"
+                       target="_blank"
+                       rel="noopener"
+                       class="boton-pequeno">
+
+                        📍 VER UBICACIÓN
+
+                    </a>
+
+
+                </div>
+
+
             </div>
-        </div>
 
-        <button class="boton-siguiente">
-            SIGUIENTE →
-        </button>
 
-    </section>
+            <button class="boton-siguiente">
+                SIGUIENTE →
+            </button>
 
-        <!-- ==========================================
+        </section>
+
+
+
+        <!-- ==================================================
              GALERÍA
-        =========================================== -->
+        =================================================== -->
 
         <section class="seccion galeria paso">
 
@@ -284,15 +476,25 @@
                 MIS RECUERDOS
             </p>
 
+
             <h2>
                 Un momento especial
             </h2>
 
+
             <div class="fotos">
+
+
                 <div class="foto foto-unica">
-                    <img src="foto1.jpg" alt="Alejandra Michelle">
+
+                    <img src="foto1.jpg"
+                         alt="Alejandra Michelle">
+
                 </div>
+
+
             </div>
+
 
             <button class="boton-siguiente">
                 SIGUIENTE →
@@ -301,67 +503,88 @@
         </section>
 
 
-        <!-- ==========================================
+
+        <!-- ==================================================
              FRASE FINAL
-        =========================================== -->
+        =================================================== -->
 
         <section class="seccion frase-final paso">
+
 
             <div class="corona">
                 ♕
             </div>
 
+
             <p>
+
                 "Los mejores momentos de la vida
                 merecen ser compartidos con quienes
                 hacen que cada instante sea especial."
+
             </p>
+
 
             <h2>
                 ¡Te espero!
             </h2>
 
+
             <div class="firma">
                 Alejandra Michelle
             </div>
+
 
             <button class="boton-siguiente">
                 SIGUIENTE →
             </button>
 
+
         </section>
 
 
-        <!-- ==========================================
+
+        <!-- ==================================================
              CONFIRMACIÓN
-        =========================================== -->
+        =================================================== -->
 
         <section class="seccion confirmacion paso">
+
             <p class="subtitulo">
                 TU PRESENCIA ES MUY IMPORTANTE
             </p>
+
 
             <h2>
                 ¿Nos acompañas?
             </h2>
 
+
             <p class="texto">
+
                 Será un placer celebrar este día
                 tan especial contigo.
+
             </p>
 
-            <a href="#" class="boton">
+
+            <a href="#"
+               class="boton">
+
                 CONFIRMAR ASISTENCIA
+
             </a>
 
         </section>
 
+
     </main>
 
 
-    <!-- ==========================================
+
+    <!-- ==================================================
          PIE DE PÁGINA
-    =========================================== -->
+    =================================================== -->
 
     <footer>
 
@@ -369,9 +592,11 @@
             Con cariño
         </p>
 
+
         <strong>
             Alejandra Michelle Hernández Muñoz
         </strong>
+
 
         <small>
             XV Años · 05 de septiembre de 2026
@@ -380,8 +605,13 @@
     </footer>
 
 
-    <!-- JavaScript -->
+
+    <!-- ==================================================
+         JAVASCRIPT
+    =================================================== -->
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
