@@ -38,6 +38,7 @@
 
         <div class="particulas"></div>
 
+        
         <div class="contenido-portada">
 
             <p class="texto-pequeno">
@@ -78,7 +79,9 @@
             <a href="#invitacion" class="boton">
                 ABRIR INVITACIÓN
             </a>
+
         </div>
+
     </section>
 
 
@@ -256,9 +259,13 @@
                         especial en un mismo lugar.
                     </p>
 
-                    <button type="button" id="abrirMapa" class="boton-pequeno">
-                            📍 VER UBICACIÓN
-                   </button>
+                    <a
+                    href="https://www.google.com/maps/search/?api=1&query=Polideportivo+Victoria+Gasteiz+Nejapa+San+Salvador"
+                    target="_blank"
+                    class="boton-pequeno">
+                    📍 VER UBICACIÓN
+                </a>
+                
             </div>
         </div>
 
@@ -352,54 +359,27 @@
 
     </main>
 
-    <!-- ==========================================
-    VENTANA DEL MAPA
-    =========================================== -->
-    <div id="ventanaMapa" class="ventana-mapa">
-        <div class="contenido-mapa">
-            <button type="button" id="cerrarMapa" class="cerrar-mapa">
-                ✕
-            </button>
-            <p class="titulo-mapa">
-                UBICACIÓN DEL EVENTO
-            </p>
-            <h2>
-                Polideportivo Victoria Gasteiz
-            </h2>
-            <div class="mapa-contenedor">
-                <iframe
-                    src="https://www.google.com/maps?q=Polideportivo+Victoria+Gasteiz+Nejapa+San+Salvador&output=embed"
-                    loading="lazy"
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <p class="direccion-mapa">
-                📍 Nejapa, San Salvador
-            </p>
-            <a
-                href="https://www.google.com/maps/search/?api=1&query=Polideportivo+Victoria+Gasteiz+Nejapa+San+Salvador"
-                target="_blank"
-                class="boton-mapa">
-                🧭 ABRIR EN GOOGLE MAPS
-            </a>
-        </div>
-    </div>
-    
+
     <!-- ==========================================
          PIE DE PÁGINA
     =========================================== -->
 
     <footer>
+
         <p>
             Con cariño
         </p>
+
         <strong>
             Alejandra Michelle Hernández Muñoz
         </strong>
+
         <small>
             XV Años · 05 de septiembre de 2026
         </small>
+
     </footer>
+
 
     <!-- JavaScript -->
     <script src="script.js"></script>
