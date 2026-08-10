@@ -214,6 +214,19 @@ if (abrirInvitacion) {
     abrirInvitacion.addEventListener("click", function(event) {
 
         event.preventDefault();
+        /* ========================================== INICIAR MÚSICA CON EL CLIC ========================================== */ 
+        if (musica && !reproduciendo) {
+            musica.play()
+                .then(function() {
+                    reproduciendo = true;
+                    if (botonMusica) {
+                botonMusica.innerHTML = "🔊";
+                    }
+                })
+                .catch(function() {
+                    console.log("El navegador bloqueó la reproducción automática.");
+                });
+        }
 
         /* Ocultar portada */
 
