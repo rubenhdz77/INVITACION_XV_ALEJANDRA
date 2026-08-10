@@ -1,9 +1,381 @@
 /* ======================================================
-   NOMBRE COMPLETO - MICHELLE HERNÁNDEZ MUÑOZ
-   MISMO ESTILO QUE ALEJANDRA
+   XV AÑOS - ALEJANDRA MICHELLE
+   DISEÑO ROSA CHAMPAGNE + DORADO
 ====================================================== */
 
-body .portada .contenido-portada h2 {
+:root {
+
+    --rosa: #f3b6c7;
+    --rosa-claro: #ffe1e9;
+    --rosa-brillo: #ffd0dc;
+
+    --dorado: #b89455;
+    --dorado-claro: #f2d49a;
+
+    --crema: #f8f4ec;
+
+    --blanco: #ffffff;
+
+    --texto: #4a4036;
+    --texto-claro: #766b60;
+}
+
+
+/* ======================================================
+   CONFIGURACIÓN GENERAL
+====================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8f4ec,
+            #eee4d4
+        );
+
+    color: var(--texto);
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* ======================================================
+   SECCIONES
+====================================================== */
+
+.seccion {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    position: relative;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    text-align: center;
+
+    padding: 60px 25px;
+}
+
+
+/* ======================================================
+   SECCIÓN ACTIVA
+====================================================== */
+
+.seccion.activo {
+
+    display: flex;
+
+    animation:
+        aparecerSeccion
+        0.9s
+        ease
+        forwards;
+}
+
+
+@keyframes aparecerSeccion {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ======================================================
+   PORTADA
+====================================================== */
+
+.portada {
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    color: white;
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(255, 182, 198, 0.14),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #493039,
+            #21191d
+        );
+}
+
+
+/* ======================================================
+   BRILLO DE FONDO
+====================================================== */
+
+.portada::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+
+    height: 650px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(242, 182, 198, 0.20),
+            rgba(242, 182, 198, 0.06) 35%,
+            transparent 70%
+        );
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+
+    animation:
+        brilloFondo
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+@keyframes brilloFondo {
+
+    0%,
+    100% {
+
+        opacity: 0.6;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.95);
+    }
+
+    50% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.08);
+    }
+}
+
+
+/* ======================================================
+   CONTENIDO DE PORTADA
+====================================================== */
+
+.contenido-portada {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    max-width: 900px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+/* ======================================================
+   MIS XV AÑOS
+====================================================== */
+
+.texto-pequeno {
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size: 13px;
+
+    letter-spacing: 7px;
+
+    font-weight: 500;
+
+    color:
+        #f2d49a !important;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 10px
+        rgba(242, 212, 154, 0.35);
+
+    opacity: 0;
+
+    animation:
+        aparecerArriba
+        1s
+        ease
+        forwards;
+
+    animation-delay: 0.3s;
+}
+
+
+/* ======================================================
+   CORONA
+====================================================== */
+
+.corona {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 65px;
+
+    line-height: 1;
+
+    color:
+        #f2d49a !important;
+
+    text-shadow:
+
+        0 0 10px
+        rgba(225, 197, 142, 0.7),
+
+        0 0 25px
+        rgba(242, 182, 198, 0.30);
+
+    margin-bottom: 10px;
+
+    opacity: 0;
+
+    transform:
+        scale(0.4)
+        rotate(-10deg);
+
+    animation:
+        aparecerCorona
+        1.2s
+        ease
+        forwards;
+
+    animation-delay: 0.6s;
+}
+
+
+/* ======================================================
+   NOMBRE ALEJANDRA
+====================================================== */
+
+.portada h1 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(72px, 12vw, 130px);
+
+    line-height:
+        0.85;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        2px;
+
+    color:
+        #f3b6c7 !important;
+
+    -webkit-text-fill-color:
+        #f3b6c7 !important;
+
+    text-shadow:
+
+        0 2px 5px
+        rgba(0, 0, 0, 0.75),
+
+        0 0 15px
+        rgba(243, 182, 199, 0.80),
+
+        0 0 35px
+        rgba(243, 182, 199, 0.40);
+
+    opacity: 0;
+
+    transform:
+        translateY(35px)
+        scale(0.92);
+
+    animation:
+        aparecerNombre
+        1.3s
+        ease
+        forwards;
+
+    animation-delay: 1s;
+}
+
+
+/* ======================================================
+   MICHELLE HERNÁNDEZ MUÑOZ
+   MISMO ROSA QUE ALEJANDRA
+====================================================== */
+
+.portada h2 {
 
     font-family:
         "Cormorant Garamond",
@@ -27,11 +399,9 @@ body .portada .contenido-portada h2 {
     margin-bottom:
         0;
 
-    /* MISMO ROSA QUE ALEJANDRA */
     color:
         #f3b6c7 !important;
 
-    /* FUERZA EL COLOR EN CHROME */
     -webkit-text-fill-color:
         #f3b6c7 !important;
 
@@ -46,8 +416,7 @@ body .portada .contenido-portada h2 {
         0 0 30px
         rgba(243, 182, 199, 0.45);
 
-    opacity:
-        0;
+    opacity: 0;
 
     transform:
         translateY(25px);
@@ -58,6 +427,1528 @@ body .portada .contenido-portada h2 {
         ease
         forwards;
 
+    animation-delay: 1.5s;
+}
+
+
+/* ======================================================
+   LÍNEA DECORATIVA
+====================================================== */
+
+.linea {
+
+    width: 160px;
+
+    height: 1px;
+
+    background:
+
+        linear-gradient(
+            to right,
+            transparent,
+            #f3b6c7,
+            #f2d49a,
+            transparent
+        );
+
+    margin:
+        27px 0;
+
+    opacity: 0;
+
+    transform:
+        scaleX(0);
+
+    animation:
+        aparecerLinea
+        1s
+        ease
+        forwards;
+
+    animation-delay: 1.9s;
+}
+
+
+/* ======================================================
+   FRASE DE PORTADA
+====================================================== */
+
+.frase-portada {
+
+    max-width: 550px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 21px;
+
+    line-height: 1.6;
+
+    font-style: italic;
+
+    color:
+        rgba(255,255,255,0.92);
+
+    opacity: 0;
+
+    transform:
+        translateY(20px);
+
+    animation:
+        aparecerArriba
+        1s
+        ease
+        forwards;
+
+    animation-delay: 2.1s;
+}
+
+
+/* ======================================================
+   FECHA DE PORTADA
+====================================================== */
+
+.fecha-portada {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 30px;
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    animation:
+        aparecerArriba
+        1s
+        ease
+        forwards;
+
+    animation-delay: 2.4s;
+}
+
+
+.fecha-portada > span {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 68px;
+
+    line-height: 1;
+
+    color:
+        #f3b6c7;
+
+    text-shadow:
+        0 0 15px
+        rgba(243, 182, 199, 0.35);
+}
+
+
+.fecha-portada > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    border-left:
+        1px solid
+        rgba(225,197,142,0.6);
+
+    padding-left: 18px;
+}
+
+
+.fecha-portada strong {
+
+    font-size: 14px;
+
+    letter-spacing: 4px;
+
+    font-weight: 500;
+
+    color:
+        #ffffff;
+}
+
+
+.fecha-portada small {
+
+    margin-top: 4px;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+
+    color:
+        #f2d49a;
+}
+
+
+/* ======================================================
+   HORA
+====================================================== */
+
+.hora-portada {
+
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    color:
+        rgba(255,255,255,0.90);
+
+    opacity: 0;
+
+    transform:
+        translateY(20px);
+
+    animation:
+        aparecerArriba
+        1s
+        ease
+        forwards;
+
+    animation-delay: 2.7s;
+}
+
+
+/* ======================================================
+   BOTÓN SIGUIENTE
+====================================================== */
+
+.boton-siguiente {
+
+    margin-top: 35px;
+
+    padding:
+        14px 34px;
+
+    border:
+        1px solid
+        #f3b6c7;
+
+    border-radius:
+        30px;
+
+    background:
+        rgba(242,182,198,0.08);
+
+    color:
+        #ffe8ef;
+
+    font-family:
+        "Montserrat",
+        sans-serif;
+
+    font-size:
+        11px;
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        3px;
+
+    cursor:
+        pointer;
+
+    transition:
+        all 0.35s ease;
+
+    box-shadow:
+        0 0 20px
+        rgba(242,182,198,0.08);
+}
+
+
+/* ======================================================
+   BOTÓN DE PORTADA
+====================================================== */
+
+.portada .boton-siguiente {
+
+    opacity: 0;
+
+    transform:
+        translateY(20px);
+
+    animation:
+        aparecerBoton
+        1s
+        ease
+        forwards;
+
     animation-delay:
-        1.5s;
+        3.1s;
+}
+
+
+.boton-siguiente:hover {
+
+    background:
+        #f3b6c7;
+
+    color:
+        #321f27;
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 30px
+        rgba(242,182,198,0.30);
+}
+
+
+/* ======================================================
+   ANIMACIONES
+====================================================== */
+
+@keyframes aparecerArriba {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+@keyframes aparecerNombre {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(0.92);
+
+        filter:
+            blur(8px);
+    }
+
+    60% {
+
+        opacity: 1;
+
+        transform:
+            translateY(-3px)
+            scale(1.02);
+
+        filter:
+            blur(0);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+    }
+}
+
+
+@keyframes aparecerCorona {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            scale(0.4)
+            rotate(-10deg);
+
+        filter:
+            blur(5px);
+    }
+
+    60% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.15)
+            rotate(5deg);
+
+        filter:
+            blur(0);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            rotate(0);
+
+        filter:
+            blur(0);
+    }
+}
+
+
+@keyframes aparecerLinea {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scaleX(0);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scaleX(1);
+    }
+}
+
+
+@keyframes aparecerBoton {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ======================================================
+   PARTICULAS
+====================================================== */
+
+.particulas {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    overflow:
+        hidden;
+
+    pointer-events:
+        none;
+}
+
+
+.particulas span {
+
+    position:
+        absolute;
+
+    width:
+        3px;
+
+    height:
+        3px;
+
+    background:
+        #ffe1e9;
+
+    border-radius:
+        50%;
+
+    opacity:
+        0;
+
+    animation:
+        flotar
+        6s
+        linear
+        infinite;
+}
+
+
+@keyframes flotar {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(0)
+            scale(0.5);
+    }
+
+    20% {
+
+        opacity: 0.8;
+    }
+
+    80% {
+
+        opacity: 0.5;
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateY(-100vh)
+            scale(1.3);
+    }
+}
+
+
+/* ======================================================
+   SECCIONES INTERNAS
+====================================================== */
+
+.bienvenida,
+.fecha,
+.cuenta,
+.evento,
+.galeria,
+.frase-final,
+.confirmacion {
+
+    background:
+        linear-gradient(
+            135deg,
+            #faf7f1,
+            #eee5d7
+        );
+
+    color:
+        #4a4036;
+}
+
+
+/* ======================================================
+   TÍTULOS INTERNOS
+====================================================== */
+
+.seccion h2 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(42px, 8vw, 70px);
+
+    font-weight:
+        500;
+
+    color:
+        #493c31;
+
+    margin-bottom:
+        25px;
+}
+
+
+/* ======================================================
+   SUBTÍTULOS
+====================================================== */
+
+.subtitulo {
+
+    font-size:
+        11px;
+
+    letter-spacing:
+        5px;
+
+    color:
+        #b89455;
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        15px;
+}
+
+
+/* ======================================================
+   TEXTOS
+====================================================== */
+
+.texto {
+
+    max-width:
+        600px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        22px;
+
+    line-height:
+        1.7;
+
+    color:
+        #766b60;
+
+    margin:
+        10px auto;
+}
+
+
+/* ======================================================
+   ADORNO
+====================================================== */
+
+.adorno {
+
+    font-size:
+        35px;
+
+    color:
+        #b89455;
+
+    margin-bottom:
+        20px;
+}
+
+
+/* ======================================================
+   FIRMA
+====================================================== */
+
+.firma {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        35px;
+
+    font-style:
+        italic;
+
+    color:
+        #b89455;
+
+    margin-top:
+        30px;
+}
+
+
+/* ======================================================
+   FECHA GRANDE
+====================================================== */
+
+.fecha-grande {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        30px;
+
+    margin:
+        30px 0;
+}
+
+
+.fecha-grande > div:not(.separador) {
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+}
+
+
+.fecha-grande span {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(50px, 10vw, 85px);
+
+    color:
+        #b89455;
+}
+
+
+.fecha-grande small {
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        3px;
+
+    color:
+        #766b60;
+}
+
+
+.separador {
+
+    width:
+        1px;
+
+    height:
+        70px;
+
+    background:
+        #e1c58e;
+}
+
+
+.hora {
+
+    font-size:
+        18px;
+
+    letter-spacing:
+        3px;
+
+    color:
+        #766b60;
+}
+
+
+/* ======================================================
+   CUENTA REGRESIVA
+====================================================== */
+
+.contador {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        15px;
+
+    margin:
+        30px 0;
+}
+
+
+.contador-item {
+
+    min-width:
+        110px;
+
+    padding:
+        25px 15px;
+
+    background:
+        rgba(255,255,255,0.75);
+
+    border:
+        1px solid
+        rgba(184,148,85,0.3);
+
+    border-radius:
+        12px;
+
+    box-shadow:
+        0 10px 30px
+        rgba(70,50,30,0.08);
+}
+
+
+.contador-item span {
+
+    display:
+        block;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        45px;
+
+    color:
+        #b89455;
+}
+
+
+.contador-item small {
+
+    font-size:
+        9px;
+
+    letter-spacing:
+        2px;
+
+    color:
+        #766b60;
+}
+
+
+/* ======================================================
+   EVENTO
+====================================================== */
+
+.tarjetas-evento {
+
+    width:
+        100%;
+
+    max-width:
+        600px;
+}
+
+
+.tarjeta {
+
+    background:
+        rgba(255,255,255,0.8);
+
+    border:
+        1px solid
+        rgba(184,148,85,0.25);
+
+    padding:
+        40px 30px;
+
+    border-radius:
+        18px;
+
+    box-shadow:
+        0 15px 40px
+        rgba(60,45,30,0.10);
+}
+
+
+.icono {
+
+    font-size:
+        45px;
+
+    color:
+        #b89455;
+
+    margin-bottom:
+        15px;
+}
+
+
+.tarjeta h3 {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        30px;
+
+    font-weight:
+        600;
+
+    margin-bottom:
+        15px;
+}
+
+
+.tarjeta p {
+
+    margin:
+        8px 0;
+
+    color:
+        #766b60;
+}
+
+
+.tarjeta .lugar {
+
+    font-weight:
+        600;
+
+    color:
+        #4a4036;
+}
+
+
+.detalle-evento {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        19px;
+
+    line-height:
+        1.5;
+
+    margin:
+        20px auto !important;
+
+    max-width:
+        450px;
+}
+
+
+/* ======================================================
+   BOTÓN UBICACIÓN
+====================================================== */
+
+.boton-pequeno {
+
+    display:
+        inline-block;
+
+    margin-top:
+        15px;
+
+    padding:
+        12px 20px;
+
+    border:
+        1px solid
+        #b89455;
+
+    border-radius:
+        25px;
+
+    color:
+        #b89455;
+
+    text-decoration:
+        none;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        2px;
+
+    transition:
+        all 0.3s ease;
+}
+
+
+.boton-pequeno:hover {
+
+    background:
+        #b89455;
+
+    color:
+        white;
+}
+
+
+/* ======================================================
+   GALERÍA
+====================================================== */
+
+.fotos {
+
+    width:
+        100%;
+
+    max-width:
+        500px;
+
+    margin:
+        20px auto;
+}
+
+
+.foto {
+
+    overflow:
+        hidden;
+
+    border-radius:
+        15px;
+
+    border:
+        6px solid white;
+
+    box-shadow:
+        0 15px 40px
+        rgba(50,40,30,0.15);
+}
+
+
+.foto img {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+    max-height:
+        600px;
+
+    object-fit:
+        cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+
+.foto:hover img {
+
+    transform:
+        scale(1.04);
+}
+
+
+/* ======================================================
+   FRASE FINAL
+====================================================== */
+
+.frase-final {
+
+    background:
+        linear-gradient(
+            135deg,
+            #493039,
+            #21191d
+        );
+
+    color:
+        white;
+}
+
+
+.frase-final .corona {
+
+    opacity:
+        1;
+
+    margin-bottom:
+        25px;
+
+    transform:
+        none;
+
+    animation:
+        none;
+}
+
+
+.frase-final p {
+
+    max-width:
+        650px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(25px, 5vw, 38px);
+
+    line-height:
+        1.5;
+
+    font-style:
+        italic;
+
+    color:
+        rgba(255,255,255,0.9);
+}
+
+
+.frase-final h2 {
+
+    color:
+        #ffe1e9;
+
+    margin-top:
+        30px;
+
+    margin-bottom:
+        0;
+}
+
+
+/* ======================================================
+   CONFIRMACIÓN
+====================================================== */
+
+.confirmacion {
+
+    min-height:
+        80vh;
+}
+
+
+/* ======================================================
+   OCULTAR CONFIRMAR ASISTENCIA
+====================================================== */
+
+.confirmacion a.boton {
+
+    display:
+        none !important;
+}
+
+
+/* ======================================================
+   BOTÓN DE MÚSICA
+====================================================== */
+
+.boton-musica {
+
+    position:
+        fixed;
+
+    top:
+        20px;
+
+    right:
+        20px;
+
+    z-index:
+        9999;
+
+    width:
+        48px;
+
+    height:
+        48px;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(242,182,198,0.8);
+
+    background:
+        rgba(40,28,33,0.80);
+
+    backdrop-filter:
+        blur(10px);
+
+    color:
+        white;
+
+    font-size:
+        20px;
+
+    cursor:
+        pointer;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.25);
+
+    transition:
+        all 0.3s ease;
+}
+
+
+.boton-musica:hover {
+
+    transform:
+        scale(1.08);
+
+    background:
+        rgba(242,182,198,0.9);
+
+    color:
+        #321f27;
+}
+
+
+/* ======================================================
+   FOOTER
+====================================================== */
+
+footer {
+
+    text-align:
+        center;
+
+    padding:
+        45px 20px;
+
+    background:
+        #21191d;
+
+    color:
+        rgba(255,255,255,0.7);
+}
+
+
+footer p {
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        22px;
+
+    margin-bottom:
+        8px;
+}
+
+
+footer strong {
+
+    display:
+        block;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        27px;
+
+    font-weight:
+        500;
+
+    color:
+        #ffe1e9;
+}
+
+
+footer small {
+
+    display:
+        block;
+
+    margin-top:
+        12px;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        2px;
+}
+
+
+/* ======================================================
+   CELULAR
+====================================================== */
+
+@media (max-width: 600px) {
+
+    .seccion {
+
+        padding:
+            50px 20px;
+    }
+
+
+    .portada {
+
+        padding:
+            40px 20px;
+    }
+
+
+    /* ALEJANDRA */
+
+    .portada h1 {
+
+        font-size:
+            70px;
+
+        color:
+            #f3b6c7 !important;
+
+        -webkit-text-fill-color:
+            #f3b6c7 !important;
+
+        text-shadow:
+
+            0 2px 5px
+            rgba(0,0,0,0.75),
+
+            0 0 15px
+            rgba(243,182,199,0.80),
+
+            0 0 30px
+            rgba(243,182,199,0.40);
+    }
+
+
+    /* MICHELLE */
+
+    .portada h2 {
+
+        font-size:
+            27px;
+
+        max-width:
+            90%;
+
+        font-weight:
+            600;
+
+        color:
+            #f3b6c7 !important;
+
+        -webkit-text-fill-color:
+            #f3b6c7 !important;
+
+        text-shadow:
+
+            0 2px 5px
+            rgba(0,0,0,0.80),
+
+            0 0 15px
+            rgba(243,182,199,0.85),
+
+            0 0 30px
+            rgba(243,182,199,0.45);
+    }
+
+
+    .texto-pequeno {
+
+        font-size:
+            10px;
+
+        letter-spacing:
+            5px;
+    }
+
+
+    .frase-portada {
+
+        font-size:
+            18px;
+
+        max-width:
+            330px;
+    }
+
+
+    .fecha-portada > span {
+
+        font-size:
+            55px;
+    }
+
+
+    .fecha-portada {
+
+        margin-top:
+            25px;
+    }
+
+
+    .fecha-grande {
+
+        gap:
+            14px;
+    }
+
+
+    .fecha-grande span {
+
+        font-size:
+            52px;
+    }
+
+
+    .separador {
+
+        height:
+            55px;
+    }
+
+
+    .contador {
+
+        gap:
+            8px;
+    }
+
+
+    .contador-item {
+
+        min-width:
+            72px;
+
+        padding:
+            18px 8px;
+    }
+
+
+    .contador-item span {
+
+        font-size:
+            34px;
+    }
+
+
+    .contador-item small {
+
+        font-size:
+            7px;
+
+        letter-spacing:
+            1px;
+    }
+
+
+    .tarjeta {
+
+        padding:
+            30px 20px;
+    }
+
+
+    .boton-musica {
+
+        width:
+            44px;
+
+        height:
+            44px;
+
+        top:
+            15px;
+
+        right:
+            15px;
+    }
+
+
+    footer strong {
+
+        font-size:
+            22px;
+    }
+
+}
+
+
+/* ======================================================
+   CELULARES MUY PEQUEÑOS
+====================================================== */
+
+@media (max-width: 380px) {
+
+    .portada h1 {
+
+        font-size:
+            58px;
+
+        color:
+            #f3b6c7 !important;
+
+        -webkit-text-fill-color:
+            #f3b6c7 !important;
+    }
+
+
+    .portada h2 {
+
+        font-size:
+            23px;
+
+        color:
+            #f3b6c7 !important;
+
+        -webkit-text-fill-color:
+            #f3b6c7 !important;
+
+        text-shadow:
+
+            0 2px 5px
+            rgba(0,0,0,0.80),
+
+            0 0 15px
+            rgba(243,182,199,0.85),
+
+            0 0 30px
+            rgba(243,182,199,0.45);
+    }
+
+
+    .fecha-grande {
+
+        gap:
+            8px;
+    }
+
+
+    .fecha-grande span {
+
+        font-size:
+            45px;
+    }
+
+
+    .contador-item {
+
+        min-width:
+            65px;
+    }
+
 }
