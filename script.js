@@ -6,7 +6,6 @@ const fechaEvento = new Date("September 5, 2026 16:00:00").getTime();
 
 function actualizarContador() {
 
-```
 const ahora = new Date().getTime();
 const diferencia = fechaEvento - ahora;
 
@@ -50,8 +49,6 @@ document.getElementById("minutos").innerText =
 
 document.getElementById("segundos").innerText =
     String(segundos).padStart(2, "0");
-```
-
 }
 
 actualizarContador();
@@ -69,7 +66,6 @@ let reproduciendo = false;
 
 if (musica && botonMusica) {
 
-```
 window.addEventListener("load", function () {
 
     musica.volume = 0.5;
@@ -118,7 +114,6 @@ botonMusica.addEventListener("click", function () {
     }
 
 });
-```
 
 }
 
@@ -247,7 +242,6 @@ document.getElementById("ventanaMapa");
 
 if (abrirMapa && ventanaMapa) {
 
-```
 abrirMapa.addEventListener("click", function () {
 
     ventanaMapa.classList.add("mostrar-mapa");
@@ -255,15 +249,12 @@ abrirMapa.addEventListener("click", function () {
     document.body.classList.add("mapa-abierto");
 
 });
-```
-
 }
 
 /* Cerrar mapa */
 
 if (cerrarMapa && ventanaMapa) {
 
-```
 cerrarMapa.addEventListener("click", function () {
 
     ventanaMapa.classList.remove("mostrar-mapa");
@@ -271,7 +262,6 @@ cerrarMapa.addEventListener("click", function () {
     document.body.classList.remove("mapa-abierto");
 
 });
-```
 
 }
 
@@ -279,34 +269,19 @@ cerrarMapa.addEventListener("click", function () {
 
 if (ventanaMapa) {
 
-```
 ventanaMapa.addEventListener("click", function (event) {
-
     if (event.target === ventanaMapa) {
-
         ventanaMapa.classList.remove("mostrar-mapa");
-
         document.body.classList.remove("mapa-abierto");
-
     }
-
 });
-```
-
 }
-
 /* Cerrar con ESC */
 
 document.addEventListener("keydown", function (event) {
-
-```
 if (event.key === "Escape" && ventanaMapa) {
-
     ventanaMapa.classList.remove("mostrar-mapa");
-
     document.body.classList.remove("mapa-abierto");
-
 }
-```
 
 });
