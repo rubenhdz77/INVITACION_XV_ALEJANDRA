@@ -1555,3 +1555,208 @@ CELULARES
 ```
 
 }
+
+```css
+/* ======================================================
+   ANIMACIÓN DE ENTRADA - PORTADA
+   ====================================================== */
+
+/* MIS XV AÑOS */
+.portada .texto-pequeno {
+    opacity: 0;
+    animation: aparecerArriba 1s ease forwards;
+    animation-delay: 0.3s;
+}
+
+
+/* CORONA */
+.portada .corona {
+    opacity: 0;
+    transform: scale(0.5);
+    animation: aparecerCorona 1.2s ease forwards;
+    animation-delay: 0.7s;
+}
+
+
+/* NOMBRE ALEJANDRA */
+.portada h1 {
+    opacity: 0;
+    transform: translateY(35px);
+    animation: aparecerArriba 1.2s ease forwards;
+    animation-delay: 1s;
+}
+
+
+/* NOMBRE COMPLETO */
+.portada h2 {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: aparecerArriba 1s ease forwards;
+    animation-delay: 1.4s;
+}
+
+
+/* LÍNEA */
+.portada .linea {
+    transform: scaleX(0);
+    transform-origin: center;
+    animation: aparecerLinea 1s ease forwards;
+    animation-delay: 1.8s;
+}
+
+
+/* FRASE */
+.portada .frase-portada {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aparecerArriba 1s ease forwards;
+    animation-delay: 2s;
+}
+
+
+/* FECHA */
+.portada .fecha-portada {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: aparecerArriba 1s ease forwards;
+    animation-delay: 2.4s;
+}
+
+
+/* HORA */
+.portada .hora-portada {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aparecerArriba 1s ease forwards;
+    animation-delay: 2.7s;
+}
+
+
+/* BOTÓN SIGUIENTE */
+.portada .boton-siguiente {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: aparecerBoton 1s ease forwards;
+    animation-delay: 3.2s;
+}
+
+
+/* ======================================================
+   ANIMACIONES
+   ====================================================== */
+
+@keyframes aparecerArriba {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes aparecerCorona {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(-10deg);
+        filter: blur(5px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.15) rotate(5deg);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+
+}
+
+
+@keyframes aparecerLinea {
+
+    from {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes aparecerBoton {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ======================================================
+   BRILLO SUAVE DE LA CORONA
+   ====================================================== */
+
+.portada .corona {
+    animation:
+        aparecerCorona 1.2s ease forwards,
+        brilloCorona 3s ease-in-out 2s infinite;
+}
+
+
+@keyframes brilloCorona {
+
+    0% {
+        filter: drop-shadow(0 0 0px rgba(255,255,255,0));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 15px rgba(255,255,255,0.8));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 0px rgba(255,255,255,0));
+    }
+
+}
+
+
+/* ======================================================
+   EFECTO HOVER DEL BOTÓN
+   ====================================================== */
+
+.portada .boton-siguiente {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.portada .boton-siguiente:hover {
+
+    transform: translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.25);
+
+}
+```
