@@ -1,60 +1,65 @@
 /* ==========================================
-   CUENTA REGRESIVA
+CUENTA REGRESIVA
 ========================================== */
 
 const fechaEvento = new Date("September 5, 2026 16:00:00").getTime();
 
 function actualizarContador() {
 
-    const ahora = new Date().getTime();
-    const diferencia = fechaEvento - ahora;
+```
+const ahora = new Date().getTime();
+const diferencia = fechaEvento - ahora;
 
-    if (diferencia <= 0) {
-        document.getElementById("dias").innerText = "00";
-        document.getElementById("horas").innerText = "00";
-        document.getElementById("minutos").innerText = "00";
-        document.getElementById("segundos").innerText = "00";
-        return;
-    }
+if (diferencia <= 0) {
 
-    const dias = Math.floor(
-        diferencia / (1000 * 60 * 60 * 24)
-    );
+    document.getElementById("dias").innerText = "00";
+    document.getElementById("horas").innerText = "00";
+    document.getElementById("minutos").innerText = "00";
+    document.getElementById("segundos").innerText = "00";
 
-    const horas = Math.floor(
-        (diferencia % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
-    );
+    return;
+}
 
-    const minutos = Math.floor(
-        (diferencia % (1000 * 60 * 60)) /
-        (1000 * 60)
-    );
+const dias = Math.floor(
+    diferencia / (1000 * 60 * 60 * 24)
+);
 
-    const segundos = Math.floor(
-        (diferencia % (1000 * 60)) /
-        1000
-    );
+const horas = Math.floor(
+    (diferencia % (1000 * 60 * 60 * 24)) /
+    (1000 * 60 * 60)
+);
 
-    document.getElementById("dias").innerText =
-        String(dias).padStart(2, "0");
+const minutos = Math.floor(
+    (diferencia % (1000 * 60 * 60)) /
+    (1000 * 60)
+);
 
-    document.getElementById("horas").innerText =
-        String(horas).padStart(2, "0");
+const segundos = Math.floor(
+    (diferencia % (1000 * 60)) /
+    1000
+);
 
-    document.getElementById("minutos").innerText =
-        String(minutos).padStart(2, "0");
+document.getElementById("dias").innerText =
+    String(dias).padStart(2, "0");
 
-    document.getElementById("segundos").innerText =
-        String(segundos).padStart(2, "0");
+document.getElementById("horas").innerText =
+    String(horas).padStart(2, "0");
+
+document.getElementById("minutos").innerText =
+    String(minutos).padStart(2, "0");
+
+document.getElementById("segundos").innerText =
+    String(segundos).padStart(2, "0");
+```
+
 }
 
 actualizarContador();
+
 setInterval(actualizarContador, 1000);
 
-
 /* ==========================================
-   MÚSICA
+MÚSICA
 ========================================== */
 
 const musica = document.getElementById("musica");
@@ -62,6 +67,9 @@ const botonMusica = document.getElementById("botonMusica");
 
 let reproduciendo = false;
 
+if (musica && botonMusica) {
+
+```
 window.addEventListener("load", function () {
 
     musica.volume = 0.5;
@@ -72,176 +80,229 @@ window.addEventListener("load", function () {
 
         intento
             .then(function () {
+
                 reproduciendo = true;
                 botonMusica.innerHTML = "🔊";
+
             })
             .catch(function () {
+
                 reproduciendo = false;
                 botonMusica.innerHTML = "🎵";
+
             });
+
     }
+
 });
+
 
 botonMusica.addEventListener("click", function () {
 
     if (reproduciendo) {
 
         musica.pause();
+
         botonMusica.innerHTML = "🎵";
+
         reproduciendo = false;
 
     } else {
 
         musica.play();
-        botonMusica.innerHTML = "🔊";
-        reproduciendo = true;
-    }
-});
 
+        botonMusica.innerHTML = "🔊";
+
+        reproduciendo = true;
+
+    }
+
+});
+```
+
+}
 
 /* ==========================================
-   INVITACIÓN POR PASOS
+INVITACIÓN POR PASOS
 ========================================== */
 
 const pasos = document.querySelectorAll(".paso");
-const botonesSiguiente = document.querySelectorAll(".boton-siguiente");
+
+const botonesSiguiente =
+document.querySelectorAll(".boton-siguiente");
 
 const abrirInvitacion =
-    document.getElementById("abrirInvitacion");
+document.getElementById("abrirInvitacion");
 
 const portada =
-    document.querySelector(".portada");
+document.querySelector(".portada");
 
 const invitacion =
-    document.getElementById("invitacion");
-
+document.getElementById("invitacion");
 
 /* ==========================================
-   INICIAR INVITACIÓN
+INICIAR INVITACIÓN
 ========================================== */
 
 function iniciarInvitacion() {
 
-    pasos.forEach(function(paso) {
-        paso.classList.remove("activo");
-    });
+```
+pasos.forEach(function (paso) {
 
-    if (pasos.length > 0) {
-        pasos[0].classList.add("activo");
-    }
+    paso.classList.remove("activo");
+
+});
+
+if (pasos.length > 0) {
+
+    pasos[0].classList.add("activo");
+
+}
+```
+
 }
 
-
 /* ==========================================
-   ABRIR INVITACIÓN
+ABRIR INVITACIÓN
 ========================================== */
 
 if (abrirInvitacion) {
 
-    abrirInvitacion.addEventListener("click", function(event) {
+```
+abrirInvitacion.addEventListener("click", function (event) {
 
-        event.preventDefault();
+    event.preventDefault();
+
+    if (portada) {
 
         portada.classList.add("portada-oculta");
 
-        iniciarInvitacion();
+    }
+
+    iniciarInvitacion();
+
+    if (invitacion) {
 
         window.scrollTo({
             top: invitacion.offsetTop,
             behavior: "smooth"
         });
 
-    });
+    }
+
+});
+```
+
 }
 
-
 /* ==========================================
-   BOTONES SIGUIENTE
+BOTONES SIGUIENTE
 ========================================== */
 
-botonesSiguiente.forEach(function(boton, indice) {
+botonesSiguiente.forEach(function (boton, indice) {
 
-    boton.addEventListener("click", function() {
+```
+boton.addEventListener("click", function () {
 
-        if (pasos[indice]) {
-            pasos[indice].classList.remove("activo");
-        }
+    if (pasos[indice]) {
 
-        if (pasos[indice + 1]) {
+        pasos[indice].classList.remove("activo");
 
-            pasos[indice + 1].classList.add("activo");
+    }
 
-            pasos[indice + 1].scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        }
-    });
+    if (pasos[indice + 1]) {
+
+        pasos[indice + 1].classList.add("activo");
+
+        pasos[indice + 1].scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+
+});
+```
+
 });
 
-
 /* ==========================================
-   MAPA
+MAPA
 ========================================== */
 
 const abrirMapa =
-    document.getElementById("abrirMapa");
+document.getElementById("abrirMapa");
 
 const cerrarMapa =
-    document.getElementById("cerrarMapa");
+document.getElementById("cerrarMapa");
 
 const ventanaMapa =
-    document.getElementById("ventanaMapa");
+document.getElementById("ventanaMapa");
 
+/* Abrir mapa */
 
 if (abrirMapa && ventanaMapa) {
 
-    abrirMapa.addEventListener("click", function() {
+```
+abrirMapa.addEventListener("click", function () {
 
-        ventanaMapa.classList.add("mostrar-mapa");
+    ventanaMapa.classList.add("mostrar-mapa");
 
-        document.body.classList.add("mapa-abierto");
+    document.body.classList.add("mapa-abierto");
 
-    });
+});
+```
+
 }
 
+/* Cerrar mapa */
 
 if (cerrarMapa && ventanaMapa) {
 
-    cerrarMapa.addEventListener("click", function() {
+```
+cerrarMapa.addEventListener("click", function () {
 
-        ventanaMapa.classList.remove("mostrar-mapa");
+    ventanaMapa.classList.remove("mostrar-mapa");
 
-        document.body.classList.remove("mapa-abierto");
+    document.body.classList.remove("mapa-abierto");
 
-    });
+});
+```
+
 }
 
+/* Cerrar tocando fuera */
 
 if (ventanaMapa) {
 
-    ventanaMapa.addEventListener("click", function(event) {
+```
+ventanaMapa.addEventListener("click", function (event) {
 
-        if (event.target === ventanaMapa) {
-
-            ventanaMapa.classList.remove("mostrar-mapa");
-
-            document.body.classList.remove("mapa-abierto");
-
-        }
-
-    });
-}
-
-
-document.addEventListener("keydown", function(event) {
-
-    if (event.key === "Escape" && ventanaMapa) {
+    if (event.target === ventanaMapa) {
 
         ventanaMapa.classList.remove("mostrar-mapa");
 
         document.body.classList.remove("mapa-abierto");
 
     }
+
+});
+```
+
+}
+
+/* Cerrar con ESC */
+
+document.addEventListener("keydown", function (event) {
+
+```
+if (event.key === "Escape" && ventanaMapa) {
+
+    ventanaMapa.classList.remove("mostrar-mapa");
+
+    document.body.classList.remove("mapa-abierto");
+
+}
+```
 
 });
