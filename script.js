@@ -1,62 +1,65 @@
+```javascript
 /* ==========================================
-CUENTA REGRESIVA
+   CUENTA REGRESIVA
 ========================================== */
 
 const fechaEvento = new Date("September 5, 2026 16:00:00").getTime();
 
 function actualizarContador() {
 
-const ahora = new Date().getTime();
-const diferencia = fechaEvento - ahora;
+    const ahora = new Date().getTime();
+    const diferencia = fechaEvento - ahora;
 
-if (diferencia <= 0) {
+    const diasElemento = document.getElementById("dias");
+    const horasElemento = document.getElementById("horas");
+    const minutosElemento = document.getElementById("minutos");
+    const segundosElemento = document.getElementById("segundos");
 
-    document.getElementById("dias").innerText = "00";
-    document.getElementById("horas").innerText = "00";
-    document.getElementById("minutos").innerText = "00";
-    document.getElementById("segundos").innerText = "00";
+    if (!diasElemento || !horasElemento || !minutosElemento || !segundosElemento) {
+        return;
+    }
 
-    return;
-}
+    if (diferencia <= 0) {
 
-const dias = Math.floor(
-    diferencia / (1000 * 60 * 60 * 24)
-);
+        diasElemento.innerText = "00";
+        horasElemento.innerText = "00";
+        minutosElemento.innerText = "00";
+        segundosElemento.innerText = "00";
 
-const horas = Math.floor(
-    (diferencia % (1000 * 60 * 60 * 24)) /
-    (1000 * 60 * 60)
-);
+        return;
+    }
 
-const minutos = Math.floor(
-    (diferencia % (1000 * 60 * 60)) /
-    (1000 * 60)
-);
+    const dias = Math.floor(
+        diferencia / (1000 * 60 * 60 * 24)
+    );
 
-const segundos = Math.floor(
-    (diferencia % (1000 * 60)) /
-    1000
-);
+    const horas = Math.floor(
+        (diferencia % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+    );
 
-document.getElementById("dias").innerText =
-    String(dias).padStart(2, "0");
+    const minutos = Math.floor(
+        (diferencia % (1000 * 60 * 60)) /
+        (1000 * 60)
+    );
 
-document.getElementById("horas").innerText =
-    String(horas).padStart(2, "0");
+    const segundos = Math.floor(
+        (diferencia % (1000 * 60)) /
+        1000
+    );
 
-document.getElementById("minutos").innerText =
-    String(minutos).padStart(2, "0");
-
-document.getElementById("segundos").innerText =
-    String(segundos).padStart(2, "0");
+    diasElemento.innerText = String(dias).padStart(2, "0");
+    horasElemento.innerText = String(horas).padStart(2, "0");
+    minutosElemento.innerText = String(minutos).padStart(2, "0");
+    segundosElemento.innerText = String(segundos).padStart(2, "0");
 }
 
 actualizarContador();
-
 setInterval(actualizarContador, 1000);
 
+
 /* ==========================================
-MÚSICA
+   MÚSICA
 ========================================== */
 
 const musica = document.getElementById("musica");
@@ -64,71 +67,81 @@ const botonMusica = document.getElementById("botonMusica");
 
 let reproduciendo = false;
 
-/* Intentar iniciar música automáticamente */
+
+/* Intentar música automáticamente */
 
 if (musica) {
 
-window.addEventListener("load", function() {
+    window.addEventListener("load", function() {
 
-    musica.volume = 0.5;
+        musica.volume = 0.5;
 
-    const intento = musica.play();
+        const intento = musica.play();
 
-    if (intento !== undefined) {
+        if (intento !== undefined) {
 
-        intento
-            .then(function() {
+            intento
+                .then(function() {
 
-                reproduciendo = true;
+                    reproduciendo = true;
 
-                if (botonMusica) {
-                    botonMusica.innerHTML = "🔊";
-                }
+                    if (botonMusica) {
+                        botonMusica.innerHTML = "🔊";
+                    }
 
-            })
-            .catch(function() {
+                })
+                .catch(function() {
 
-                reproduciendo = false;
+                    reproduciendo = false;
 
-                if (botonMusica) {
-                    botonMusica.innerHTML = "🎵";
-                }
+                    if (botonMusica) {
+                        botonMusica.innerHTML = "🎵";
+                    }
 
-            });
+                });
 
-    }
+        }
 
-});
+    });
 
 }
+
 
 /* Botón de música */
 
 if (musica && botonMusica) {
 
-botonMusica.addEventListener("click", function() {
+    botonMusica.addEventListener("click", function() {
 
-    if (reproduciendo) {
+        if (reproduciendo) {
 
-        musica.pause();
+            musica.pause();
 
-        botonMusica.innerHTML = "🎵";
+            botonMusica.innerHTML = "🎵";
 
-        reproduciendo = false;
+            reproduciendo = false;
 
-    } else {
+        } else {
 
-        musica.play();
+            musica.play()
+                .then(function() {
 
-        botonMusica.innerHTML = "🔊";
+                    botonMusica.innerHTML = "🔊";
+                    reproduciendo = true;
 
-        reproduciendo = true;
+                })
+                .catch(function() {
 
-    }
+                    console.log("No se pudo reproducir la música.");
 
-});
+                });
+
+        }
+
+    });
 
 }
+
 
 /* ==========================================
    INVITACIÓN POR PASOS
@@ -210,21 +223,36 @@ if (abrirInvitacion) {
     abrirInvitacion.addEventListener("click", function(event) {
 
         event.preventDefault();
-        /* ========================================== INICIAR MÚSICA CON EL CLIC ========================================== */ 
+
+
+        /* ==========================================
+           INICIAR MÚSICA AL HACER CLIC
+        ========================================== */
+
         if (musica && !reproduciendo) {
+
             musica.play()
                 .then(function() {
+
                     reproduciendo = true;
+
                     if (botonMusica) {
-                botonMusica.innerHTML = "🔊";
+                        botonMusica.innerHTML = "🔊";
                     }
+
                 })
                 .catch(function() {
-                    console.log("El navegador bloqueó la reproducción automática.");
+
+                    console.log("El navegador bloqueó la música.");
+
                 });
+
         }
 
-        /* Ocultar portada */
+
+        /* ==========================================
+           OCULTAR PORTADA
+        ========================================== */
 
         if (portada) {
 
@@ -232,11 +260,17 @@ if (abrirInvitacion) {
 
         }
 
-        /* Mostrar primera sección */
+
+        /* ==========================================
+           MOSTRAR PRIMERA SECCIÓN
+        ========================================== */
 
         iniciarInvitacion();
 
-        /* Ir a la invitación */
+
+        /* ==========================================
+           IR A LA INVITACIÓN
+        ========================================== */
 
         if (invitacion) {
 
@@ -251,62 +285,89 @@ if (abrirInvitacion) {
 
 }
 
+
 /* ==========================================
-MAPA
+   MAPA
 ========================================== */
 
-const abrirMapa = document.getElementById("abrirMapa");
-const cerrarMapa = document.getElementById("cerrarMapa");
-const ventanaMapa = document.getElementById("ventanaMapa");
+const abrirMapa =
+    document.getElementById("abrirMapa");
+
+const cerrarMapa =
+    document.getElementById("cerrarMapa");
+
+const ventanaMapa =
+    document.getElementById("ventanaMapa");
+
 
 /* ==========================================
-ABRIR MAPA
+   ABRIR MAPA
 ========================================== */
 
 if (abrirMapa && ventanaMapa) {
 
-```
-abrirMapa.addEventListener("click", function(event) {
+    abrirMapa.addEventListener("click", function(event) {
 
-    event.preventDefault();
-    event.stopPropagation();
+        event.preventDefault();
+        event.stopPropagation();
 
-    ventanaMapa.classList.add("mostrar-mapa");
+        ventanaMapa.classList.add("mostrar-mapa");
 
-    document.body.classList.add("mapa-abierto");
+        document.body.classList.add("mapa-abierto");
 
-});
+    });
 
 }
 
+
 /* ==========================================
-CERRAR MAPA CON X
+   CERRAR MAPA CON X
 ========================================== */
 
 if (cerrarMapa && ventanaMapa) {
 
-cerrarMapa.addEventListener("click", function(event) {
+    cerrarMapa.addEventListener("click", function(event) {
 
-    event.preventDefault();
-    event.stopPropagation();
+        event.preventDefault();
+        event.stopPropagation();
 
-    ventanaMapa.classList.remove("mostrar-mapa");
+        ventanaMapa.classList.remove("mostrar-mapa");
 
-    document.body.classList.remove("mapa-abierto");
+        document.body.classList.remove("mapa-abierto");
 
-});
+    });
 
 }
 
+
 /* ==========================================
-CERRAR MAPA TOCANDO AFUERA
+   CERRAR MAPA TOCANDO AFUERA
 ========================================== */
 
 if (ventanaMapa) {
 
-ventanaMapa.addEventListener("click", function(event) {
+    ventanaMapa.addEventListener("click", function(event) {
 
-    if (event.target === ventanaMapa) {
+        if (event.target === ventanaMapa) {
+
+            ventanaMapa.classList.remove("mostrar-mapa");
+
+            document.body.classList.remove("mapa-abierto");
+
+        }
+
+    });
+
+}
+
+
+/* ==========================================
+   CERRAR MAPA CON ESC
+========================================== */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape" && ventanaMapa) {
 
         ventanaMapa.classList.remove("mostrar-mapa");
 
@@ -315,20 +376,4 @@ ventanaMapa.addEventListener("click", function(event) {
     }
 
 });
-
-}
-
-/* ==========================================
-CERRAR MAPA CON ESC
-========================================== */
-
-document.addEventListener("keydown", function(event) {
-
-if (event.key === "Escape" && ventanaMapa) {
-
-    ventanaMapa.classList.remove("mostrar-mapa");
-
-    document.body.classList.remove("mapa-abierto");
-
-}
-});
+```
