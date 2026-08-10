@@ -68,7 +68,6 @@ let reproduciendo = false;
 
 if (musica) {
 
-```
 window.addEventListener("load", function() {
 
     musica.volume = 0.5;
@@ -100,7 +99,6 @@ window.addEventListener("load", function() {
     }
 
 });
-```
 
 }
 
@@ -108,7 +106,6 @@ window.addEventListener("load", function() {
 
 if (musica && botonMusica) {
 
-```
 botonMusica.addEventListener("click", function() {
 
     if (reproduciendo) {
@@ -130,7 +127,6 @@ botonMusica.addEventListener("click", function() {
     }
 
 });
-```
 
 }
 
@@ -280,7 +276,6 @@ abrirMapa.addEventListener("click", function(event) {
     document.body.classList.add("mapa-abierto");
 
 });
-```
 
 }
 
@@ -290,7 +285,6 @@ CERRAR MAPA CON X
 
 if (cerrarMapa && ventanaMapa) {
 
-```
 cerrarMapa.addEventListener("click", function(event) {
 
     event.preventDefault();
@@ -301,7 +295,6 @@ cerrarMapa.addEventListener("click", function(event) {
     document.body.classList.remove("mapa-abierto");
 
 });
-```
 
 }
 
@@ -311,7 +304,6 @@ CERRAR MAPA TOCANDO AFUERA
 
 if (ventanaMapa) {
 
-```
 ventanaMapa.addEventListener("click", function(event) {
 
     if (event.target === ventanaMapa) {
@@ -323,7 +315,6 @@ ventanaMapa.addEventListener("click", function(event) {
     }
 
 });
-```
 
 }
 
@@ -333,7 +324,6 @@ CERRAR MAPA CON ESC
 
 document.addEventListener("keydown", function(event) {
 
-```
 if (event.key === "Escape" && ventanaMapa) {
 
     ventanaMapa.classList.remove("mostrar-mapa");
@@ -341,5 +331,4 @@ if (event.key === "Escape" && ventanaMapa) {
     document.body.classList.remove("mapa-abierto");
 
 }
-```
 });
