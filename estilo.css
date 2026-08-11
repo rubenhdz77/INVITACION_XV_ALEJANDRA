@@ -1981,3 +1981,49 @@ CELULARES MUY PEQUEÑOS
             65px;
     }
 }
+
+
+/* ======================================================
+   BOTONES SIGUIENTE - SECCIONES CLARAS
+   ====================================================== */
+
+.bienvenida .boton-siguiente,
+.fecha .boton-siguiente,
+.cuenta .boton-siguiente,
+.evento .boton-siguiente,
+.galeria .boton-siguiente,
+.confirmacion .boton-siguiente {
+
+    color: #8f6b3d;
+
+    border-color: #b89455;
+
+    background: rgba(184, 148, 85, 0.08);
+
+    box-shadow:
+        0 4px 15px
+        rgba(184, 148, 85, 0.12);
+
+}
+
+
+/* AL PASAR EL MOUSE */
+
+.bienvenida .boton-siguiente:hover,
+.fecha .boton-siguiente:hover,
+.cuenta .boton-siguiente:hover,
+.evento .boton-siguiente:hover,
+.galeria .boton-siguiente:hover,
+.confirmacion .boton-siguiente:hover {
+
+    background: #b89455;
+
+    color: white;
+
+    border-color: #b89455;
+
+    box-shadow:
+        0 8px 25px
+        rgba(184, 148, 85, 0.30);
+
+}
